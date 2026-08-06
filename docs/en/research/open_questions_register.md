@@ -1,27 +1,21 @@
 # Open Questions Register
 
-> **English semantic mirror.** The detailed Russian register remains the item-level working source.
+> **English semantic mirror.** This edition preserves the decisions, interfaces, constraints, status boundaries, and implementation intent of the Russian source. It is meaning-oriented rather than sentence-by-sentence. Canonical identifiers, formulas, API names, reason codes, and compatibility requirements remain unchanged.
 
 ## Purpose
 
-This register keeps unresolved research, architecture, calibration, product, and governance questions separate from settled decisions.
+Keeps architectural and product questions separate from settled decisions.
 
-## Major question groups
+## Preserved decisions
 
-- How should component confidence be defined and calibrated?
-- Which objective components are sufficiently independent to combine linearly?
-- How should source dependence and observer dependence be represented?
-- Which time windows and aggregation scales are domain-specific?
-- How should delayed evidence revise an earlier prediction without erasing history?
-- What prospective evaluation protocol distinguishes useful early warning from retrospective story fitting?
-- When should the system abstain rather than return a score?
-- How should causal support, feedback loops, decay dynamics, and scenario branching be added without overstating capability?
-- Which high-impact domains require mandatory human review or prohibit automated action?
+- Open questions must not silently become defaults.
+- Decisions should record rationale, alternatives, and downstream impact.
+- Questions affecting formulas or compatibility require versioned resolution.
 
-## Decision rule
+## Boundaries and verification status
 
-An open question must not silently become a default. Resolution should record alternatives, rationale, downstream impact, affected formulas or interfaces, and the version in which the decision becomes active.
+- This register is research governance, not a backlog of trivial editorial tasks.
 
-## Boundary
+## Source relationship
 
-Open questions are not defects to hide. They define the current research frontier and protect the project from presenting design assumptions as established knowledge.
+The Russian source remains the detailed normative working artifact. This English mirror is the public semantic counterpart and must be updated whenever a decision, invariant, interface, formula, or status changes.

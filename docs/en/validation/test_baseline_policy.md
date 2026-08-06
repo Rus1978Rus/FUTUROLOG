@@ -1,31 +1,22 @@
 # Test Baseline Policy
 
-> **English semantic mirror.** Baselines distinguish intended evolution from accidental scoring drift.
+> **English semantic mirror.** This edition preserves the decisions, interfaces, constraints, status boundaries, and implementation intent of the Russian source. It is meaning-oriented rather than sentence-by-sentence. Canonical identifiers, formulas, API names, reason codes, and compatibility requirements remain unchanged.
 
-## Required baselines
+## Purpose
 
-### M1.4 no-objective baseline
+Defines the regression baselines that protect migration and Objective Layer activation.
 
-Captures canonical behaviour after domain-neutral naming, canonical mapping, dual output, metadata, and the controlled gamma transition, but before Objective Layer activation.
+## Preserved decisions
 
-When no objective components are active, every later implementation must reproduce this baseline exactly for equivalent input.
+- M1.4 no-objective behavior is the compatibility baseline.
+- M3.6.1 full-objective behavior is a separate activation baseline.
+- Baseline changes require explicit rationale and review.
+- Tests must distinguish intended evolution from accidental drift.
 
-### M3.6.1 full-objective baseline
+## Boundaries and verification status
 
-Captures behaviour after all five Objective Layer components are integrated and activation logic is enabled. It is separate from the no-objective compatibility baseline.
+- Passing a new test does not justify deleting prior baselines without a documented decision.
 
-## Baseline contents
+## Source relationship
 
-Baselines should cover final score, universal score, objective value and activation state, trust adjustment, confluence behaviour, legacy and canonical fields, reason codes, metadata versions, missing-input behaviour, partial status, and sealing/audit payloads where applicable.
-
-## Update rule
-
-A baseline may change only through an explicit versioned decision that states:
-
-- what changed;
-- why the prior behaviour is no longer correct;
-- expected compatibility impact;
-- affected tests and documentation;
-- reviewer and validation evidence.
-
-Passing a new test is not sufficient reason to delete or rewrite a prior baseline.
+The Russian source remains the detailed normative working artifact. This English mirror is the public semantic counterpart and must be updated whenever a decision, invariant, interface, formula, or status changes.

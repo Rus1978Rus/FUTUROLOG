@@ -1,8 +1,8 @@
-# FUTUROLOG Provenance Map
+# Provenance Map
 
-This map records the intended non-destructive reorganization of `FUTUROLOG_HANDOFF_PACK`. Original content remains authoritative at the detailed working level; English files are meaning-oriented mirrors.
+This map records the non-destructive reorganization of the original `FUTUROLOG_HANDOFF_PACK`. Original content is preserved in the Russian working layer; English files are semantic mirrors.
 
-| Original path | Systematized Russian path | English semantic mirror |
+| Original path | Systematized Russian path | English mirror |
 |---|---|---|
 | `00_READ_ME_FIRST_FOR_DEVELOPER.md` | `docs/ru/implementation/read_me_first.md` | `docs/en/implementation/read_me_first.md` |
 | `01_IMPLEMENTATION_ORDER.md` | `docs/ru/implementation/implementation_order.md` | `docs/en/implementation/implementation_order.md` |
@@ -28,7 +28,3 @@ This map records the intended non-destructive reorganization of `FUTUROLOG_HANDO
 | `patches_M3/M3.6.1_objective_layer_activation_patch.md` | `docs/ru/implementation/m3/m3.6.1_objective_layer_activation_patch.md` | `docs/en/implementation/m3/m3.6.1_objective_layer_activation_patch.md` |
 | `patches_M3/M3.6.2_objective_layer_operational_patch.md` | `docs/ru/implementation/m3/m3.6.2_objective_layer_operational_patch.md` | `docs/en/implementation/m3/m3.6.2_objective_layer_operational_patch.md` |
 | `release_docs/entropy_rg_v3_domain_neutral_migration.md` | `docs/ru/releases/entropy_rg_v3_domain_neutral_migration.md` | `docs/en/releases/entropy_rg_v3_domain_neutral_migration.md` |
-
-## Translation rule
-
-The English layer must preserve decisions, formulas, interfaces, status labels, compatibility constraints, and uncertainty boundaries. It must not strengthen claims merely to make the text sound smoother.

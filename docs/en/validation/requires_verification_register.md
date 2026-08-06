@@ -1,48 +1,21 @@
 # Requires Verification Register
 
-> **English semantic mirror.** The detailed Russian register remains the item-level working source. This mirror preserves its governance meaning and closure requirements.
+> **English semantic mirror.** This edition preserves the decisions, interfaces, constraints, status boundaries, and implementation intent of the Russian source. It is meaning-oriented rather than sentence-by-sentence. Canonical identifiers, formulas, API names, reason codes, and compatibility requirements remain unchanged.
 
 ## Purpose
 
-The register prevents assumptions, proposed interfaces, inferred file paths, formula interpretations, and copied code fragments from silently becoming verified facts.
+Central register of claims, interfaces, files, formulas, and assumptions that must be checked before implementation or publication as fact.
 
-## Entry classes
+## Preserved decisions
 
-Verification items may concern:
+- Every unresolved entry remains visibly unresolved.
+- Verification should identify evidence, reviewer, date, and outcome.
+- Absence of contradiction is not equivalent to verification.
 
-- existence and current location of source files;
-- current function names, signatures, schemas, and public API fields;
-- numeric behaviour and formula order;
-- default weights, thresholds, alpha, gamma, and calibration state;
-- database and dataset migration impact;
-- compatibility aliases and planned removal versions;
-- security, HMAC, sealing, and audit payload behaviour;
-- test coverage and baseline availability;
-- independence of sources or observers;
-- validity of domain assumptions;
-- documentation claims about implementation or readiness.
+## Boundaries and verification status
 
-## Closure requirements
+- The register contains a large number of inherited assumptions and cannot be closed in bulk without evidence.
 
-An item is closed only when the repository records:
+## Source relationship
 
-1. the evidence inspected;
-2. the exact conclusion;
-3. the reviewer or responsible actor;
-4. the date and relevant version or commit;
-5. any resulting patch, test, or documentation change.
-
-Absence of an observed contradiction is not verification. A plausible code excerpt in a patch document is not proof that the real source tree contains that code.
-
-## Status discipline
-
-Recommended statuses are:
-
-- `OPEN`;
-- `BLOCKING`;
-- `IN_REVIEW`;
-- `VERIFIED`;
-- `REJECTED_ASSUMPTION`;
-- `DEFERRED_WITH_RATIONALE`.
-
-Bulk closure without item-level evidence is prohibited.
+The Russian source remains the detailed normative working artifact. This English mirror is the public semantic counterpart and must be updated whenever a decision, invariant, interface, formula, or status changes.

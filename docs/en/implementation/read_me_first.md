@@ -1,35 +1,23 @@
 # Read Me First for Developers
 
-> **English semantic mirror.** This is the required entry point before implementing any FUTUROLOG or Entropy-RG migration document.
+> **English semantic mirror.** This edition preserves the decisions, interfaces, constraints, status boundaries, and implementation intent of the Russian source. It is meaning-oriented rather than sentence-by-sentence. Canonical identifiers, formulas, API names, reason codes, and compatibility requirements remain unchanged.
 
-## Status
+## Purpose
 
-The repository is a research architecture and developer handoff. It contains proposed patches, interfaces, invariants, registers, and migration guidance. It does not by itself prove that the described runtime exists or that the scoring model is calibrated.
+Defines how a developer must approach the FUTUROLOG handoff before changing code or treating any document as implemented.
 
-## Primary rule
+## Preserved decisions
 
-Verify the actual source repository, schemas, tests, API behaviour, and stored data before applying any patch. Patch text is a design artifact until reconciled with the real codebase.
+- Read documents in the declared order and verify assumptions before implementation.
+- Treat explicit invariants as hard constraints, not optional guidance.
+- Preserve the safe-rollout sequence and compatibility behavior.
+- Do not convert architectural intent into production claims without code, tests, and calibration evidence.
 
-## Required reading order
+## Boundaries and verification status
 
-1. Critical invariants.
-2. Requires-verification register.
-3. Test baseline policy.
-4. Implementation order.
-5. Current architecture v1.1.
-6. Canonical scoring mapping.
-7. Objective Layer design.
-8. Milestone patches in numerical order.
+- The package is a developer handoff and research architecture, not proof of a finished runtime.
+- Items marked REQUIRES_VERIFICATION remain unresolved until checked against source code and baselines.
 
-## Prohibited shortcuts
+## Source relationship
 
-- Do not declare a component implemented because a code excerpt exists in a document.
-- Do not treat default weights as calibrated.
-- Do not remove compatibility aliases without the declared migration boundary.
-- Do not activate the Objective Layer by passing an empty context.
-- Do not apply trust adjustment more than once.
-- Do not erase failed predictions or corrections from the audit history.
-
-## Safe rollout
-
-Use a branch, preserve the no-objective baseline, apply one milestone at a time, run regression and component tests, expose partial operation honestly, and maintain rollback capability.
+The Russian source remains the detailed normative working artifact. This English mirror is the public semantic counterpart and must be updated whenever a decision, invariant, interface, formula, or status changes.

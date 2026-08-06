@@ -28,15 +28,16 @@ OSINT и стратегический анализ, кибербезопасно
 
 ## Языки
 
-- Русская документация — детальный рабочий слой.
+- [Русская документация](docs/ru/README.md) — детальный рабочий слой.
 - [English semantic mirror](README.md) — смысловой английский слой.
 
 ## Навигация
 
-- [Порядок реализации](01_IMPLEMENTATION_ORDER.md)
-- [Критические инварианты](02_CRITICAL_INVARIANTS.md)
-- [Индекс исходных документов](03_DOCUMENT_INDEX.md)
-- [Английская архитектура v1.1](docs/en/architecture/futurolog_architecture_v1.1.md)
+- [Архитектура](docs/ru/architecture/)
+- [Порядок реализации](docs/ru/implementation/implementation_order.md)
+- [Критические инварианты](docs/ru/specification/critical_invariants.md)
+- [Что требует проверки](docs/ru/validation/requires_verification_register.md)
+- [Открытые вопросы](docs/ru/research/open_questions_register.md)
 - [Карта происхождения файлов](PROVENANCE_MAP.md)
 
 ## Автор и права

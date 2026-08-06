@@ -1,0 +1,282 @@
+{
+  "project": "FUTUROLOG",
+  "generated_utc": "2026-08-06T20:23:00Z",
+  "file_count": 55,
+  "files": [
+    {
+      "path": "PROVENANCE_MAP.md",
+      "bytes": 4152,
+      "sha256": "473aff24a6762e104779bad93f7b8fc9267d14ec0fd8b41b02a7bdbf108230be"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2289,
+      "sha256": "7b6fa9c5627b1451527f7b27e7db5d45b648ddb12f56e3e5be2c0cc24bb95e22"
+    },
+    {
+      "path": "README_RU.md",
+      "bytes": 3525,
+      "sha256": "16df8105c4e68239afb785e23ae030b6148ac346b4f1c6f7e3544a2a53c5860d"
+    },
+    {
+      "path": "RIGHTS_AND_USAGE.md",
+      "bytes": 621,
+      "sha256": "369bfe58a092a927a6df1c1303a1fb53f5db3992db261c4bb3c6d78951b35066"
+    },
+    {
+      "path": "archive_manifest.json",
+      "bytes": 306,
+      "sha256": "d7e2d0135cbefb18098494930f25c50b24e0ae690b697ba34703545330e48087"
+    },
+    {
+      "path": "docs/en/README.md",
+      "bytes": 267,
+      "sha256": "f4f8d0b8c86f543034f5078f1761d299baf5d2bc4aca87657b09e731da80f459"
+    },
+    {
+      "path": "docs/en/architecture/canonical_scoring_mapping_v1.md",
+      "bytes": 1724,
+      "sha256": "662f97a2cfe239f4a3cc4d62ed8b7bc771e81846fb403f5427e849f0e98c3d42"
+    },
+    {
+      "path": "docs/en/architecture/futurolog_architecture_v1.0_legacy.md",
+      "bytes": 1392,
+      "sha256": "104bbaeb07ff18bcf56d243dd9960591d7866ff6cffa52140761bfd18d051ce2"
+    },
+    {
+      "path": "docs/en/architecture/futurolog_architecture_v1.1.md",
+      "bytes": 1929,
+      "sha256": "1c202a1117e79de4c94647f1ba2a17c3f0dffb37ebcf1c68e8ec71c4ec4927e9"
+    },
+    {
+      "path": "docs/en/architecture/objective_layer_design_v1.md",
+      "bytes": 1736,
+      "sha256": "d7f725f9a563a47fa2cbbbd5fd8e09df13d79813eb838238538e1e4412d4d4c3"
+    },
+    {
+      "path": "docs/en/implementation/implementation_order.md",
+      "bytes": 1276,
+      "sha256": "bc92e7ad90f5eb1e85ee1ffdab6156dce0480b9380a814b71576668699672317"
+    },
+    {
+      "path": "docs/en/implementation/m1/m1.1_migration_plan_v3_0.md",
+      "bytes": 1325,
+      "sha256": "ad7140b47ea3fc3b35f9a37bd9f57995abca18e09845f1a4df7212407364b3fb"
+    },
+    {
+      "path": "docs/en/implementation/m1/m1.2_domain_rename_patch.md",
+      "bytes": 1205,
+      "sha256": "c21085d69c0849046ccab49c7ffb5972c13578987171541d6fa54e32155dc6b5"
+    },
+    {
+      "path": "docs/en/implementation/m1/m1.3_scoring_rename_patch.md",
+      "bytes": 1206,
+      "sha256": "7000f1fc258ecf1d7daafd3a92eb3a5ea3a72d2af72e997e2274ad7e07385394"
+    },
+    {
+      "path": "docs/en/implementation/m1/m1.4_dual_output_patch.md",
+      "bytes": 1175,
+      "sha256": "c1cfe5327c052a7856c42fd7d35b00e556ef9fc122202f2a6de2d143798bbb59"
+    },
+    {
+      "path": "docs/en/implementation/m1/m1.5_documentation_release.md",
+      "bytes": 1270,
+      "sha256": "4b279a16c84a1a78a952d5dd31dbca53a4a120f9aed1213f75bad691cbfb219a"
+    },
+    {
+      "path": "docs/en/implementation/m3/m3.1_temporal_persistence_patch.md",
+      "bytes": 1211,
+      "sha256": "d96a39798e1c1974c269335ca58f51c626873b1829e4bf7d2f1ae1ca0721496d"
+    },
+    {
+      "path": "docs/en/implementation/m3/m3.2_observer_agreement_patch.md",
+      "bytes": 1149,
+      "sha256": "c96f2f110fe5a0f54ce8215fc79d766f4e06155d1164f1af5da1de366f7a963a"
+    },
+    {
+      "path": "docs/en/implementation/m3/m3.3_source_redundancy_patch.md",
+      "bytes": 1100,
+      "sha256": "f258547b4625fef2af90be8a8732652461a830c552582c4750070cdba8ab9b06"
+    },
+    {
+      "path": "docs/en/implementation/m3/m3.4_noise_separation_patch.md",
+      "bytes": 1102,
+      "sha256": "9871ad176364b7e54fcb7a4c19af0036c311cb3b190d6fac9e37c9fde9a59a28"
+    },
+    {
+      "path": "docs/en/implementation/m3/m3.5_scale_stability_patch.md",
+      "bytes": 1128,
+      "sha256": "60b43b8d6cb2e811261193f4fd18cb2ed708406d0974fd6b945fb9fe13da7889"
+    },
+    {
+      "path": "docs/en/implementation/m3/m3.6.1_objective_layer_activation_patch.md",
+      "bytes": 1206,
+      "sha256": "9141cbeee5d671411bee4e9419f68197a283d5646a17905e708884c728dd1342"
+    },
+    {
+      "path": "docs/en/implementation/m3/m3.6.2_objective_layer_operational_patch.md",
+      "bytes": 1227,
+      "sha256": "0f544d966f440aff754cceed0ec3a198856140239d25f0f7a1130095f8f95d6a"
+    },
+    {
+      "path": "docs/en/implementation/read_me_first.md",
+      "bytes": 1328,
+      "sha256": "6fc3f55b5703a938c9a22ec6399e79486abbecbb8f20ce5d4f8aa77f2ac13edc"
+    },
+    {
+      "path": "docs/en/index/source_document_index.md",
+      "bytes": 1078,
+      "sha256": "41a11238a5a038d52dd56f80932a8182b1f8e1f47540bf0eec853287c97e5747"
+    },
+    {
+      "path": "docs/en/releases/entropy_rg_v3_domain_neutral_migration.md",
+      "bytes": 1295,
+      "sha256": "d7e145713f7cc52a8462fca1899859bb6130e24929c9bf90309427fdd939cda3"
+    },
+    {
+      "path": "docs/en/research/open_questions_register.md",
+      "bytes": 1031,
+      "sha256": "823d0710a474eb8aace8b0f9009c2551739829f842ff183c5012f6446cec28a4"
+    },
+    {
+      "path": "docs/en/specification/critical_invariants.md",
+      "bytes": 1271,
+      "sha256": "3f30fdff0fd37c95c0583393c71b28ff218a8f1c214af09da536bce8497ab9e1"
+    },
+    {
+      "path": "docs/en/validation/requires_verification_register.md",
+      "bytes": 1113,
+      "sha256": "d2ad6240a88733283183ac56d1e3c52f1b8be96a746beec07241411c769ee04e"
+    },
+    {
+      "path": "docs/en/validation/test_baseline_policy.md",
+      "bytes": 1102,
+      "sha256": "3cba72377644d0c9174fdbcce86cbf50348da2a2977b3cad41b7f576e9d1e87e"
+    },
+    {
+      "path": "docs/ru/README.md",
+      "bytes": 346,
+      "sha256": "0769f65b6564a22a8ad7aacab92f801aa4f4ef7f5f50df5638e2ed20db837d7d"
+    },
+    {
+      "path": "docs/ru/architecture/canonical_scoring_mapping_v1.md",
+      "bytes": 40351,
+      "sha256": "efd94c4760fd6a467d727f2c51128dc0ecd7e1b1133f4b71ea0a8359ec9b8b91"
+    },
+    {
+      "path": "docs/ru/architecture/futurolog_architecture_v1.0_legacy.md",
+      "bytes": 52384,
+      "sha256": "d76b633a909120f6207abba733755371832cff3dac117cd80a7243a5ff62ff92"
+    },
+    {
+      "path": "docs/ru/architecture/futurolog_architecture_v1.1.md",
+      "bytes": 68768,
+      "sha256": "660e7f349e956359a1566c0ba30d890c6045ce98c19584c62b4d2a1cf501d97f"
+    },
+    {
+      "path": "docs/ru/architecture/objective_layer_design_v1.md",
+      "bytes": 42868,
+      "sha256": "0b07e89efb6af8c36cbadf835807c9307be3110b8f5094537a79baa242b20d7e"
+    },
+    {
+      "path": "docs/ru/implementation/implementation_order.md",
+      "bytes": 1112,
+      "sha256": "362d8ad3e54368682c746108f97f6b75b53544669a65e8a532f09f0f449c1688"
+    },
+    {
+      "path": "docs/ru/implementation/m1/m1.1_migration_plan_v3_0.md",
+      "bytes": 56596,
+      "sha256": "b26f12c2274d379b4d9c2b86cc62dd079526f15dbf04e2f28665fad7294e85fd"
+    },
+    {
+      "path": "docs/ru/implementation/m1/m1.2_domain_rename_patch.md",
+      "bytes": 49266,
+      "sha256": "15a804e4987f4e1de6fdd0c70d832df281013afe7ab8c09ee7382c74cc158113"
+    },
+    {
+      "path": "docs/ru/implementation/m1/m1.3_scoring_rename_patch.md",
+      "bytes": 40768,
+      "sha256": "62d6842b15b8c72e78125efed4b94abc676901f0619fb0b288edcd004bad1fab"
+    },
+    {
+      "path": "docs/ru/implementation/m1/m1.4_dual_output_patch.md",
+      "bytes": 34043,
+      "sha256": "d3d0987136a200e82c6daa4b53013f37bc95b91d73817de2dc3eebbc2f3e41f3"
+    },
+    {
+      "path": "docs/ru/implementation/m1/m1.5_documentation_release.md",
+      "bytes": 46584,
+      "sha256": "4f03813bef0207ebe24d86e054b6fe327bfe3c48299ac7fa8002836de0282692"
+    },
+    {
+      "path": "docs/ru/implementation/m3/m3.1_temporal_persistence_patch.md",
+      "bytes": 51950,
+      "sha256": "9ddfa788d646b65605821079fd414ec329a43483fe2ed5f494c21f0549d00fe9"
+    },
+    {
+      "path": "docs/ru/implementation/m3/m3.2_observer_agreement_patch.md",
+      "bytes": 46740,
+      "sha256": "229c1c42c5fc8fe72f85a358f3a135be49236268f0dc3fae0ec6deb6785250ad"
+    },
+    {
+      "path": "docs/ru/implementation/m3/m3.3_source_redundancy_patch.md",
+      "bytes": 41378,
+      "sha256": "460ae614ca079e2a1cbd431f36a76a1cec9ac4fa5451648097485a2018e1860f"
+    },
+    {
+      "path": "docs/ru/implementation/m3/m3.4_noise_separation_patch.md",
+      "bytes": 32728,
+      "sha256": "7a5c8e23919076015a5d0c8ba88fb3d7fbc550634a295a07662c1c7219a98828"
+    },
+    {
+      "path": "docs/ru/implementation/m3/m3.5_scale_stability_patch.md",
+      "bytes": 34437,
+      "sha256": "2b30d52333136f6b461a9c2003059a624125e468da74cbfcfa3dc037e884eb9b"
+    },
+    {
+      "path": "docs/ru/implementation/m3/m3.6.1_objective_layer_activation_patch.md",
+      "bytes": 43426,
+      "sha256": "6766ec0bd13913b5a16b8b88b92eb62f6316a27a2ac753c64996f5bfb670c7a8"
+    },
+    {
+      "path": "docs/ru/implementation/m3/m3.6.2_objective_layer_operational_patch.md",
+      "bytes": 38333,
+      "sha256": "640cbca070414c48c646e2f5fd591b23aecbadcc7c680e90948f4984cf47b464"
+    },
+    {
+      "path": "docs/ru/implementation/read_me_first.md",
+      "bytes": 1985,
+      "sha256": "d5d50a44c67d0e7acdac226cf7504a658ba4760ec1476fe7bc4be13e26ce3563"
+    },
+    {
+      "path": "docs/ru/index/source_document_index.md",
+      "bytes": 1860,
+      "sha256": "d50f0dac1853617dffb908ffa9b3044622bf037613d106bcdd96e29bf4b00d67"
+    },
+    {
+      "path": "docs/ru/releases/entropy_rg_v3_domain_neutral_migration.md",
+      "bytes": 61006,
+      "sha256": "ba7256ac21ae990be10a2a23cdb24eaed9aa0198ecefde196065aadb0d4fb66d"
+    },
+    {
+      "path": "docs/ru/research/open_questions_register.md",
+      "bytes": 7413,
+      "sha256": "5d69a9e63f3f126d7b5d7dc25749062c4ebf5423943a143871d7ffde32f15d2e"
+    },
+    {
+      "path": "docs/ru/specification/critical_invariants.md",
+      "bytes": 1350,
+      "sha256": "618a2367c48c9b7a1de320ded1bed6892098edd2034b9a2ffb92ddf9b8ca6231"
+    },
+    {
+      "path": "docs/ru/validation/requires_verification_register.md",
+      "bytes": 32084,
+      "sha256": "bee3b94a8c429387915e1b328512fa7817df37256b9b92c695606701824db63f"
+    },
+    {
+      "path": "docs/ru/validation/test_baseline_policy.md",
+      "bytes": 747,
+      "sha256": "f15edbab8b1bbb5b52b8023cd6f76bed153440f45030321859810925b1f23392"
+    }
+  ]
+}

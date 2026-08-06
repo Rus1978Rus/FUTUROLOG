@@ -1,33 +1,23 @@
 # Entropy-RG v3 Domain-Neutral Migration Release
 
-> English semantic mirror of the consolidated Russian migration document.
+> **English semantic mirror.** This edition preserves the decisions, interfaces, constraints, status boundaries, and implementation intent of the Russian source. It is meaning-oriented rather than sentence-by-sentence. Canonical identifiers, formulas, API names, reason codes, and compatibility requirements remain unchanged.
 
-## Release intent
+## Purpose
 
-Transform the inherited Entropy-RG scoring engine from a marketplace-specific implementation into a domain-neutral foundation suitable for FUTUROLOG domain adapters.
+Consolidates the v3 migration design, file-level changes, compatibility strategy, tests, documentation, and release criteria.
 
-## Main changes
+## Preserved decisions
 
-- replace `seller` and `listing` ontology with `actor` and `event`;
-- introduce canonical scoring names and a versioned legacy mapping;
-- expose dual legacy/canonical output during migration;
-- version system, formula, mapping, and scoring metadata;
-- preserve compatibility through declared aliases and migration rules;
-- establish the M1.4 no-objective baseline;
-- prepare, but do not silently activate, the M3 Objective Layer.
+- The engine becomes domain-neutral through actor/event abstractions.
+- Canonical names coexist with legacy output during migration.
+- Objective Layer work remains a separately staged milestone.
+- Release readiness requires code, tests, migration checks, and documentation alignment.
 
-## Validation requirements
+## Boundaries and verification status
 
-Release readiness requires aligned code, tests, data migrations, storage schemas, API responses, documentation, security/sealing payloads, and rollback behaviour.
+- Patch text is an implementation proposal until applied and verified against the real repository.
+- Code excerpts must not be assumed to compile or match current source without verification.
 
-## Compatibility boundary
+## Source relationship
 
-Deprecated aliases are temporary and require declared removal versions. Silent field removal or semantic reassignment is prohibited.
-
-## Calibration boundary
-
-Domain-neutral implementation does not imply domain-neutral calibration. Each production domain requires representative data, evaluation criteria, thresholds, and prospective validation.
-
-## Status
-
-This repository currently contains architecture and migration specifications. Runtime implementation and release readiness must be verified in the actual source-code repository.
+The Russian source remains the detailed normative working artifact. This English mirror is the public semantic counterpart and must be updated whenever a decision, invariant, interface, formula, or status changes.

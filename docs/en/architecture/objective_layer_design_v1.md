@@ -1,67 +1,30 @@
 # Objective Layer Design v1
 
-> **English semantic mirror.** Meaning-oriented counterpart of the Russian working document.
+> **English semantic mirror.** This edition preserves the decisions, interfaces, constraints, status boundaries, and implementation intent of the Russian source. It is meaning-oriented rather than sentence-by-sentence. Canonical identifiers, formulas, API names, reason codes, and compatibility requirements remain unchanged.
 
 ## Purpose
 
-The Objective Layer answers a question that the universal risk score cannot answer by itself: **how objectively supported is the detected signal?**
+Specifies the interfaces, context objects, activation logic, aggregation behavior, and tests for the Objective Layer.
 
-## Component result contract
+## Preserved decisions
 
-Each objective component returns:
+- Each component returns value, confidence, missing inputs, reasons, and partial-status metadata.
+- ObjectiveLayerContext carries score history, observer results, source registry, noise baseline, and scale aggregates.
+- Missing components are excluded and active weights are renormalized.
+- Layer confidence is reported separately from objective value.
+- Inactive Objective Layer behavior must equal the no-objective baseline exactly.
+- Supporting structures include observer registry, source-independence graph, noise baseline, scale aggregator, and score history.
+- MVP implementation is staged and must expose partial operation honestly.
 
-- `value` — normalized component result;
-- `confidence` — confidence in the component result, not automatically a calibrated probability of truth;
-- `missing_inputs` — evidence required but unavailable;
-- `reasons` — machine- and human-readable explanation;
-- `partial` — whether the result was computed from incomplete context.
+## Boundaries and verification status
 
-Insufficient evidence must not be replaced with a fabricated neutral score.
+- A component with insufficient evidence must not fabricate a neutral score.
+- Confidence is not probability of truth unless separately calibrated.
 
-## ObjectiveLayerContext
+## Implementation meaning
 
-The context extends scoring input with explicit supporting structures:
+This design turns “how real is this signal?” into an explicit, inspectable computation rather than a hidden model intuition.
 
-- `score_history` for temporal analysis;
-- `observer_results` for independent analytical agreement;
-- `source_registry` and source-dependence information;
-- `noise_baseline` for signal/noise comparison;
-- `scale_aggregates` for cross-scale stability.
+## Source relationship
 
-## Components
-
-- `temporal_persistence` — checks whether the signal survives across time windows;
-- `observer_agreement` — measures agreement across sufficiently independent observers;
-- `source_redundancy` — evaluates support from multiple non-duplicate sources;
-- `noise_separation` — tests whether the signal differs materially from the noise baseline;
-- `scale_stability` — checks whether the pattern remains coherent at different aggregation scales.
-
-## Aggregation
-
-Only valid active components participate in `objective_risk`. Active weights are renormalized. Layer confidence is reported separately from the objective value.
-
-The layer is inactive when no objective component is valid. In that case, the final system output must equal the M1.4 no-objective baseline exactly.
-
-## Supporting structures
-
-The design introduces or anticipates:
-
-- `ObserverRegistry`;
-- `SourceIndependenceGraph`;
-- `NoiseBaseline`;
-- `ScaleAggregator`;
-- `ScoreHistory`.
-
-These structures must remain explicit and auditable. Hidden state would undermine reproducibility and testing.
-
-## MVP strategy
-
-Implementation is staged component by component. Partial operation must be visible in the response schema. “Implemented” and “calibrated” are separate statuses.
-
-## Testing requirements
-
-Tests should cover monotonicity where applicable, missing inputs, short histories, conflicting observers, dependent sources, stale baselines, scale gaps, active-weight normalization, inactive-layer regression, and formula-order invariants.
-
-## Boundary
-
-The Objective Layer estimates evidential support under declared assumptions. It does not transform uncertain evidence into certainty and does not prove causality.
+The Russian source remains the detailed normative working artifact. This English mirror is the public semantic counterpart and must be updated whenever a decision, invariant, interface, formula, or status changes.

@@ -1,24 +1,24 @@
 # FUTUROLOG Architecture v1.0 — Legacy
 
-> English semantic mirror retained for provenance and comparison. Version 1.1 takes precedence where the documents conflict.
+> **English semantic mirror.** This edition preserves the decisions, interfaces, constraints, status boundaries, and implementation intent of the Russian source. It is meaning-oriented rather than sentence-by-sentence. Canonical identifiers, formulas, API names, reason codes, and compatibility requirements remain unchanged.
 
 ## Purpose
 
-Version 1.0 established the first complete concept of an auditable weak-signal and foresight platform.
+Preserves the first full architecture of a weak-signal detection and auditable foresight platform.
 
-## Preserved architectural ideas
+## Preserved decisions
 
-- weak persistent evidence may be more informative than a loud isolated event;
-- signal intensity and evidential objectivity are different dimensions;
-- explainability and auditability are part of the product, not afterthoughts;
-- the platform contains signal ingestion, a rapid scoring path, priority routing, a deep audit path, evidence sealing, and compensation;
-- canonical entities include Actor, Event, Source, Evidence, Topic, Prediction, and Audit Record;
-- failed forecasts should be corrected and retained in history rather than silently erased.
+- The platform values persistent weak evidence over loud isolated events.
+- Intensity and objectivity are separate dimensions.
+- The architecture contains signal ingestion, a hot scoring path, priority lanes, a deep audit path, evidence sealing, and compensation.
+- Core entities include Actor, Event, Source, Evidence, Topic, Prediction, and Audit Record.
+- The platform is designed for auditable decisions rather than oracle-like prediction.
 
-## Legacy status
+## Boundaries and verification status
 
-This document records architectural evolution. It must not override the v1.1 formula, activation rules, terminology, or status boundaries.
+- This version is historical and must not override v1.1 where they conflict.
+- Cryptographic sealing protects recorded evidence integrity; it does not prove truth.
 
-## Integrity boundary
+## Source relationship
 
-Hash chains and cryptographic sealing can protect the integrity of stored evidence and outputs. They cannot establish the truth of the underlying observation.
+The Russian source remains the detailed normative working artifact. This English mirror is the public semantic counterpart and must be updated whenever a decision, invariant, interface, formula, or status changes.

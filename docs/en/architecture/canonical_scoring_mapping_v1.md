@@ -1,55 +1,28 @@
 # Canonical Scoring Mapping v1
 
-> **English semantic mirror.** This document preserves the scoring distinctions and migration intent of the Russian source.
+> **English semantic mirror.** This edition preserves the decisions, interfaces, constraints, status boundaries, and implementation intent of the Russian source. It is meaning-oriented rather than sentence-by-sentence. Canonical identifiers, formulas, API names, reason codes, and compatibility requirements remain unchanged.
 
 ## Purpose
 
-The mapping connects inherited Entropy-RG scoring terms with the domain-neutral FUTUROLOG vocabulary without pretending that a rename is an empirical validation.
+Maps legacy Entropy-RG components into the FUTUROLOG universal and objective scoring layers.
 
-## Universal layer
+## Preserved decisions
 
-The intended universal components are:
+- Universal components include local action risk, profile deviation, flow asymmetry, graph risk, trust penalty, sequential anomaly, and RG persistence.
+- Objective components include scale stability, temporal persistence, source redundancy, observer agreement, and noise separation.
+- Legacy keys and canonical FUTUROLOG keys are connected through an explicit mapping layer.
+- Objective risk is computed only from active components with normalized active weights.
+- The final formula combines universal risk, objective contribution, trust adjustment, and bounded confluence behavior.
 
-- `local_action_risk`;
-- `profile_deviation`;
-- `flow_asymmetry`;
-- `graph_risk`;
-- `trust_penalty`;
-- `sequential_anomaly_score`;
-- `rg_persistence_score`.
+## Boundaries and verification status
 
-These components estimate intensity, anomaly, structural concentration, sequence behaviour, and persistence inside the observed process.
+- Weights are design defaults until calibrated.
+- A mapping is not evidence that two concepts are empirically equivalent.
 
-## Objective layer
+## Implementation meaning
 
-The intended objective components are:
+This document is the semantic bridge between the inherited scoring engine and the future domain-neutral platform. Implementations must preserve key provenance and expose both legacy and canonical outputs during migration.
 
-- `scale_stability`;
-- `temporal_persistence`;
-- `source_redundancy`;
-- `observer_agreement`;
-- `noise_separation`.
+## Source relationship
 
-These components estimate the quality and robustness of the evidence supporting the signal.
-
-## Migration rule
-
-Legacy Entropy-RG keys and canonical FUTUROLOG keys must be connected through an explicit versioned mapping layer. During migration, responses may expose both views. Silent replacement of public fields is prohibited.
-
-## Aggregation rule
-
-Objective risk is calculated only from active valid components. Missing components are excluded, and the remaining active weights are normalized. Component confidence and layer confidence are separate from component value.
-
-Trust adjustment is subtracted exactly once. Formula order and confluence behaviour must remain explicit and covered by regression tests.
-
-## Calibration boundary
-
-Default weights are engineering hypotheses until calibrated on representative domain data. The mapping specifies semantic placement; it does not prove predictive usefulness, independence, or optimal weighting.
-
-## Recommended implementation sequence
-
-1. Stabilize legacy behaviour and tests.
-2. Introduce canonical names and mapping metadata.
-3. Expose dual legacy/canonical output.
-4. Implement Objective Layer components behind inactive-safe integration.
-5. Calibrate only after prospective datasets and evaluation criteria exist.
+The Russian source remains the detailed normative working artifact. This English mirror is the public semantic counterpart and must be updated whenever a decision, invariant, interface, formula, or status changes.

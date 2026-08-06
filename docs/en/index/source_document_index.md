@@ -1,43 +1,20 @@
 # Source Document Index
 
-## Entry documents
+> **English semantic mirror.** This edition preserves the decisions, interfaces, constraints, status boundaries, and implementation intent of the Russian source. It is meaning-oriented rather than sentence-by-sentence. Canonical identifiers, formulas, API names, reason codes, and compatibility requirements remain unchanged.
 
-- `implementation/read_me_first.md`
-- `implementation/implementation_order.md`
-- `specification/critical_invariants.md`
-- `validation/requires_verification_register.md`
-- `research/open_questions_register.md`
-- `validation/test_baseline_policy.md`
+## Purpose
 
-## Architecture
+Indexes the original handoff artifacts and their intended reading order.
 
-- `architecture/futurolog_architecture_v1.1.md` — current architectural target;
-- `architecture/futurolog_architecture_v1.0_legacy.md` — retained historical version;
-- `architecture/canonical_scoring_mapping_v1.md` — legacy-to-canonical scoring map;
-- `architecture/objective_layer_design_v1.md` — Objective Layer interfaces and activation design.
+## Preserved decisions
 
-## M1 migration
+- Architecture, implementation patches, validation registers, and release materials are distinct artifact classes.
+- Legacy architecture is retained for provenance and comparison, not silently treated as current.
 
-- M1.1 migration plan;
-- M1.2 domain rename;
-- M1.3 scoring rename;
-- M1.4 dual output and compatibility baseline;
-- M1.5 release documentation.
+## Boundaries and verification status
 
-## M3 Objective Layer
+- The systematized repository path is now the navigation layer; original names remain traceable through the provenance map.
 
-- temporal persistence;
-- observer agreement;
-- source redundancy;
-- noise separation;
-- scale stability;
-- guarded activation;
-- operational hardening.
+## Source relationship
 
-## Release material
-
-- `releases/entropy_rg_v3_domain_neutral_migration.md`
-
-## Reading rule
-
-Read governance and invariants before patch documents. Treat legacy architecture as provenance, not current authority. Treat code excerpts as proposed changes until verified against the actual source tree.
+The Russian source remains the detailed normative working artifact. This English mirror is the public semantic counterpart and must be updated whenever a decision, invariant, interface, formula, or status changes.

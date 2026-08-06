@@ -1,35 +1,25 @@
 # Critical Invariants
 
-> **English semantic mirror.** These constraints are non-negotiable unless changed through an explicit versioned decision.
+> **English semantic mirror.** This edition preserves the decisions, interfaces, constraints, status boundaries, and implementation intent of the Russian source. It is meaning-oriented rather than sentence-by-sentence. Canonical identifiers, formulas, API names, reason codes, and compatibility requirements remain unchanged.
 
-## 1. Trust adjustment is subtracted once
+## Purpose
 
-The trust-related deduction must enter the final formula exactly once. It must not be duplicated inside component scores and then subtracted again at integration.
+Captures non-negotiable scoring and rollout constraints.
 
-## 2. No-objective regression equals the M1.4 baseline
+## Preserved decisions
 
-When the Objective Layer has no active valid components, final behaviour must be exactly equivalent to the M1.4 no-objective baseline.
+- Trust adjustment is subtracted exactly once.
+- When no objective components are active, output must regress exactly to the M1.4 baseline.
+- Objective activation depends on active components, not the mere presence of an object.
+- Objective components are stateless functions of explicit context.
+- Weights and calibration status must be explicit and versioned.
+- Rollout proceeds through guarded, testable stages.
 
-## 3. Objective activation is evidence-based
+## Boundaries and verification status
 
-The Objective Layer is active only when at least one objective component has a valid result. The presence of an empty context object does not activate the layer.
+- Changing an invariant requires an explicit versioned decision and baseline update.
+- Calibration is not implied by implementation.
 
-## 4. Active component definition
+## Source relationship
 
-An active component has sufficient inputs, a valid normalized value, and no blocking error. Missing or invalid components are excluded rather than assigned fabricated neutral values.
-
-## 5. Active weights are normalized
-
-Objective weights are renormalized over active components. A missing component must not silently dilute the total.
-
-## 6. Objective modules are stateless
-
-Component outputs must be functions of explicit input and context. Registries, histories, baselines, and graphs are passed or referenced explicitly so results remain reproducible and testable.
-
-## 7. Calibration status is explicit
-
-Implemented, tested, calibrated, validated, and production-ready are different statuses. None may be inferred from another.
-
-## 8. Safe rollout
-
-Migration proceeds through guarded milestones with compatibility output, regression baselines, component-level tests, partial-status reporting, and rollback capability.
+The Russian source remains the detailed normative working artifact. This English mirror is the public semantic counterpart and must be updated whenever a decision, invariant, interface, formula, or status changes.
