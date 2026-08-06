@@ -1,31 +1,45 @@
 # FUTUROLOG
 
-FUTUROLOG is a research architecture for detecting and evaluating persistent emerging processes from noisy, heterogeneous evidence.
+**FUTUROLOG** is a research architecture for the early detection of persistent emerging processes from weak signals.
 
-The project separates two questions:
+It does not claim to “predict the future.” It separates two questions:
 
-1. How strong or risky is the observed signal?
-2. How objective and independently supported is that signal?
+1. How significant or risky might the observed process be?
+2. How objectively supported is the signal by independent, persistent, structured evidence?
 
-This repository currently contains the developer handoff package: architecture documents, critical invariants, migration patches, verification registers, open questions, and release documentation.
+## What the system could potentially do
 
-## Start here
-
-- [`00_READ_ME_FIRST_FOR_DEVELOPER.md`](00_READ_ME_FIRST_FOR_DEVELOPER.md)
-- [`01_IMPLEMENTATION_ORDER.md`](01_IMPLEMENTATION_ORDER.md)
-- [`02_CRITICAL_INVARIANTS.md`](02_CRITICAL_INVARIANTS.md)
-- [`03_DOCUMENT_INDEX.md`](03_DOCUMENT_INDEX.md)
-- [`architecture/futurolog_architecture_v1.1.md`](architecture/futurolog_architecture_v1.1.md)
-- [`architecture/objective_layer_design_v1.md`](architecture/objective_layer_design_v1.md)
-
-## Current status
-
-Research and implementation handoff package. The repository contains architecture and patch specifications; it does not by itself prove that a complete production runtime, validated predictor, or finished forecasting system exists.
+- ingest and normalize weak signals from heterogeneous sources;
+- compute a domain-neutral universal risk score;
+- separately evaluate temporal persistence, source independence, observer agreement, noise separation, and cross-scale stability;
+- produce explainable outputs with reasons, missing inputs, partial status, and confidence;
+- maintain provenance, audit trails, evidence sealing, and correction history;
+- surface slowly accumulating structural change rather than reacting only to loud events.
 
 ## Potential applications
 
-Potential domains include OSINT, geopolitical and corporate risk analysis, cyber-threat detection, financial-market signal filtering, predictive maintenance, epidemiological surveillance, scientific trend detection, and other settings where persistent weak signals must be separated from transient noise.
+OSINT and strategic intelligence, cyber defence, supply-chain monitoring, market surveillance, epidemiological early warning, industrial diagnostics, scientific landscape analysis, and detection of social or technological trends.
 
-## Important boundary
+## Status
 
-FUTUROLOG is not an oracle and does not claim certain prediction of future events. Its intended role is to support auditable early-signal detection, evidence aggregation, uncertainty assessment, and human decision-making.
+`RESEARCH_ARCHITECTURE / HANDOFF_PACKAGE / NOT_VALIDATED_PREDICTION_SYSTEM / RUNTIME_NOT_CONFIRMED`
+
+Architecture and patch documents do not prove the existence of a finished application. Formulas, weights, thresholds, and interfaces require implementation, testing, calibration, and prospective validation on domain data.
+
+## Languages
+
+- [Русская версия](README_RU.md) — detailed Russian working layer.
+- [English documentation](docs/en/README.md) — semantic English mirror.
+
+## Navigation
+
+- [Current architecture](docs/en/architecture/futurolog_architecture_v1.1.md)
+- [Implementation order](docs/en/implementation/implementation_order.md)
+- [Critical invariants](docs/en/specification/critical_invariants.md)
+- [Requires-verification register](docs/en/validation/requires_verification_register.md)
+- [Open questions](docs/en/research/open_questions_register.md)
+- [File provenance map](PROVENANCE_MAP.md)
+
+## Author and rights
+
+Author and project owner: **Ruslan Malyavsky**. Commercial use requires separate written permission from the author. See [RIGHTS_AND_USAGE.md](RIGHTS_AND_USAGE.md).
