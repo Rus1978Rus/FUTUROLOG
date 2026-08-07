@@ -1,0 +1,19 @@
+{
+  "artifact": "OBJECTIVE_COVERAGE_FORMULA_BAKEOFF_v0_1",
+  "created_at": "2026-08-07T16:27:00+03:00",
+  "status": "EXPERIMENTAL_NOT_CALIBRATED_NOT_VALIDATED",
+  "parent": "OBJECTIVE_COVERAGE_DESIGN_v0_1",
+  "seed": 42,
+  "monotonicity_samples": 5000,
+  "results": {
+    "A_LINEAR_COVERAGE": {"boundary_pass": "6/8", "decision": "KEEP_AS_BASELINE_CANDIDATE"},
+    "B_GEOMETRIC": {"boundary_pass": "5/8", "decision": "KEEP_FOR_COMPARISON"},
+    "C_HYBRID_MIN_CAP": {"boundary_pass": "8/8", "decision": "PROMOTE_TO_HISTORICAL_EVALUATION_CANDIDATE_NOT_FINAL"}
+  },
+  "invariants": [
+    "SYNTHETIC_PASS != REAL_WORLD_VALIDATION",
+    "BEST_IN_BAKEOFF != FINAL_FORMULA",
+    "CONFIDENCE_IN_ANALYSIS != PROBABILITY_OF_FUTURE_EVENT"
+  ],
+  "next_gate": "OBJECTIVE_COVERAGE_HISTORICAL_EVALUATION_v0_1"
+}
