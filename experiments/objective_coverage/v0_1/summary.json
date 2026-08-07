@@ -1,0 +1,22 @@
+{
+  "status": "EXPERIMENTAL_NOT_CALIBRATED_NOT_VALIDATED",
+  "summary": {
+    "A_LINEAR_COVERAGE": {
+      "passed": 6,
+      "total": 8,
+      "monotonicity_violations_5000_samples": 0
+    },
+    "B_GEOMETRIC": {
+      "passed": 5,
+      "total": 8,
+      "monotonicity_violations_5000_samples": 0
+    },
+    "C_HYBRID_MIN_CAP": {
+      "passed": 8,
+      "total": 8,
+      "monotonicity_violations_5000_samples": 0
+    }
+  },
+  "monotonicity_seed": 42,
+  "monotonicity_samples": 5000
+}
