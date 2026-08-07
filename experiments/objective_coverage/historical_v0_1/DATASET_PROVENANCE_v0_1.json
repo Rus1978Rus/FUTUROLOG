@@ -1,0 +1,24 @@
+{
+  "artifact": "HISTORICAL_DATASET_SPEC_v0_1",
+  "project": "FUTUROLOG",
+  "created_at": "2026-08-07T21:29:00+03:00",
+  "status": "DATASET_SPEC_FROZEN / PILOT_PIPELINE_VALIDATION / NOT_FORMULA_SELECTION / NOT_VALIDATED",
+  "target_event_class": "LARGE_SCALE_INTERSTATE_KINETIC_ESCALATION",
+  "pilot_episode": "Russia-Ukraine escalation 2021-2022",
+  "target_event_time": "2022-02-24",
+  "forecast_horizon_days": 30,
+  "snapshot_count": 13,
+  "source_families": [
+    "NATO_OFFICIAL",
+    "CSIS_ANALYSIS",
+    "IEA_ENERGY"
+  ],
+  "critical_boundaries": [
+    "ONE_CRISIS != GENERAL_VALIDATION",
+    "WEEKLY_SNAPSHOTS != INDEPENDENT_CASES",
+    "SOURCE_COUNT != SOURCE_INDEPENDENCE",
+    "CONFIDENCE_IN_ANALYSIS != EVENT_PROBABILITY"
+  ],
+  "numeric_evidence_state_status": "NOT_COMPUTED",
+  "next_artifact": "EVIDENCE_STATE_ADAPTER_SPEC_v0_1_RU.md"
+}
