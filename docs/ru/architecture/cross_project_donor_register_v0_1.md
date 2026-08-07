@@ -44,6 +44,27 @@
 | MSL/MIP | independent structural axes | runtime/core axes | ADAPT | Text Structural Adapter |
 | MSL/MIP | pinned data + visible degradation | `data/unicode`, `data/net` | IMPORT/ADAPT | Data Provenance |
 | MSL/MIP | cheap O(n) input guard | `input_guard.py` | ADAPT | Ingestion Gate |
+| Зерно и формула | карта стадий формализации | `зерно_и_формула.md`, `SPEC.md` | ADAPT/REFERENCE | Emerging Domain Assessment |
+| Зерно и формула | диагностика pre-technology maturity | `seed_formula.py` / `TransformationEngine.diagnose` | ADAPT | Emerging Domain Assessment |
+| Зерно и формула | численные `formality/meaning` deltas и crisis boost ×1.5 | `seed_formula.py`, `SPEC.md` | REFERENCE_ONLY / NOT_CALIBRATED | Experimental Harness |
+
+## Новый донор: «Зерно и формула»
+
+Источник — пользовательский архив `OKComputer_Философы_и_математики.zip`. В документе описана семистадийная логическая карта: вербализация вопроса → определение → идеализация → символизация → измерение → аксиоматизация → алгоритмизация. Сам источник прямо оговаривает, что это логический порядок, а не обязательный хронологический закон: реальные траектории могут возвращаться назад, менять порядок и застревать на этапах.
+
+Для FUTUROLOG берётся не тезис о «законе развития науки», а диагностический механизм для зарождающихся областей и два защитных инварианта:
+
+`MEASUREMENT != CONSTRUCT_VALIDITY`
+
+`FORMALIZATION != UNDERSTANDING`
+
+Дополнительный guard:
+
+`FORMALIZATION_PROGRESS != REALITY_COVERAGE`
+
+Численные параметры симулятора (`formality_delta`, `meaning_delta`, стартовые метрики и `CRISIS_BOOST = 1.5`) не считаются откалиброванными измерениями и не входят в Objective/Coverage или core scoring.
+
+Подробная кандидатная карточка: `docs/ru/research/emerging_domain_assessment_candidate_v0_1.md`.
 
 ## Разрешение основных дублей
 
@@ -114,14 +135,17 @@ Foundation Layer → защитные принципы
 CONVEYOR         → как меняем и проверяем систему
 Qudit discipline→ пререгистрация и воспроизводимость
 E-Continuity     → сохранность и восстановимость исторического корпуса
+Зерно и формула  → кандидатная диагностика зрелости зарождающейся области
 ```
 
 ## Текущий запрет
 
-До отдельного решения не переносить квантовую математику QuditEngine в scoring, de Bruijn/HMAC BRUINGate в аналитическое ядро, весь MSL/MIP как обязательную зависимость, весь Notarius crypto stack, несколько конкурирующих audit chains или confidence-механизмов.
+До отдельного решения не переносить квантовую математику QuditEngine в scoring, de Bruijn/HMAC BRUINGate в аналитическое ядро, весь MSL/MIP как обязательную зависимость, весь Notarius crypto stack, несколько конкурирующих audit chains или confidence-механизмов, а также не использовать численные deltas из «Зерна и формулы» как валидированные метрики.
 
 ## Следующий узел
 
 `OBJECTIVE / COVERAGE v2`: measured score (измеренный результат), evidence coverage (покрытие доказательств), source independence (независимость источников), freshness (свежесть), pipeline completeness (полнота маршрута), observed noise (наблюдаемый шум), effective confidence (эффективная уверенность).
 
 `HIGH_MEASURED_SCORE + LOW_COVERAGE != HIGH_EFFECTIVE_CONFIDENCE`
+
+После фиксации нового донора порядок не меняется: следующий технический шаг — `OBJECTIVE_COVERAGE_FORMULA_BAKEOFF_v0_1`.

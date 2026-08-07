@@ -7,5 +7,6 @@ Meaning-oriented English mirror of the Russian working documentation. It preserv
 - [Cross-project donor register v0.1](architecture/cross_project_donor_register_v0_1.md) — identifies candidate mechanisms for import, adaptation, reference-only use, deferral, or rejection.
 - [Objective / Coverage Design v0.1](architecture/objective_coverage_design_v0_1.md) — separates measured score, evidence coverage, source independence, freshness, pipeline completeness, observed noise, and effective confidence.
 - [Strategic Interaction Candidate v0.1](research/strategic_interaction_candidate_v0_1.md) — deferred candidate layer for relationship memory, partner switching, and network redundancy; not part of the current core.
+- [Emerging Domain Assessment Candidate v0.1](research/emerging_domain_assessment_candidate_v0_1.md) — deferred emerging-domain maturity diagnostic derived from the Seed and Formula donor; donor numeric deltas are not treated as calibrated measurements.
 
 These documents are working/candidate artifacts and do not claim production readiness, validation, or completed integration.
