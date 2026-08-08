@@ -1,6 +1,6 @@
 # BULK_EVIDENCE_COLLECTION_STATUS v0.1
 
-**Статус:** `BULK_COLLECTION_CONTINUES / BATCH_002_ADDED / NOT_READY_FOR_EVIDENCE_STATE`
+**Статус:** `BULK_COLLECTION_CONTINUES / BATCH_003_ADDED / NOT_READY_FOR_EVIDENCE_STATE`
 
 ## Что сделано
 
@@ -10,54 +10,54 @@
 
 - `russia_ukraine/evidence_intake_batch_001.csv`;
 - `russia_ukraine/evidence_intake_batch_002.csv`;
+- `russia_ukraine/evidence_intake_batch_003.csv`;
 - `myanmar_post_coup_civil_war/evidence_intake_batch_001.csv`;
-- `myanmar_post_coup_civil_war/evidence_intake_batch_002.csv`.
+- `myanmar_post_coup_civil_war/evidence_intake_batch_002.csv`;
+- `myanmar_post_coup_civil_war/evidence_intake_batch_003.csv`.
 
-Batch 002 расширяет не военный и не только экономический слой.
+## Batch 003 — Россия–Украина
 
-### Россия–Украина: Batch 002
+Добавлены contemporaneous (доступные тогда) источники по:
 
-Добавлены свидетельства по:
+- institutional trust sensor (сенсор институционального доверия) KIIS декабря 2021;
+- восприятию угрозы вторжения;
+- оценке достаточности дипломатических и оборонных действий правительства;
+- региональным различиям в отношении к ЕС/НАТО;
+- структурным институциональным слабостям по World Bank SCD 2021;
+- образовательной устойчивости и инвестициям в модернизацию как stabilizer (стабилизатор).
 
-- длительному внутреннему перемещению и проблемам доступа к пенсиям/социальным услугам вдоль линии соприкосновения;
-- локальному социальному и семейному разделению из-за ограничений пересечения линии соприкосновения;
-- COVID-давлению на образование и риску усиления образовательного неравенства;
-- институциональной адаптации системы высшего образования как стабилизатору;
-- программам интеграции ВПЛ и durable solutions (долговременным решениям) как стабилизирующему контуру.
+Важно: survey attitude (опросное отношение) не считается объективной вероятностью вторжения и не превращается автоматически в causal factor (причинный фактор).
 
-### Мьянма: Batch 002
+## Batch 003 — Мьянма
 
-Добавлены свидетельства по:
+Добавлены contemporaneous источники по:
 
-- пред-переворотному COVID/бедностному давлению;
-- Civil Disobedience Movement как межпрофессиональной сети;
-- врачам, медсёстрам, госслужащим, преподавателям, юристам, религиозным лидерам, молодёжи и женщинам как разным social-group nodes (узлам социальных групп);
-- интернет-ограничениям как одновременно социальному воздействию и искажению наблюдаемости;
-- спаду экономики, занятости, банковских/платёжных, логистических, телекоммуникационных и публичных услуг;
-- росту цен на импортные товары и топливо, аграрным input-cost (затратам на ресурсы производства) и кредитным ограничениям;
-- ограниченному временному улучшению мобильности и логистики в мае-июне 2021 как стабилизатору;
-- третьей волне COVID и ограниченной способности системы здравоохранения.
+- росту цен на еду и топливо уже в марте 2021;
+- сильной региональной неоднородности ценового давления;
+- банковским, remittance (денежные переводы) и cash-access ограничениям;
+- contingency food stocks (резервам продовольствия) WFP как stabilizer;
+- риску роста городского голода и household debt (долгов домохозяйств);
+- масштабированию продовольственной помощи;
+- displacement (перемещению населения) и отдельному contemporaneous UNHCR sensor на 21 июня 2021;
+- World Bank household survey как потенциальному pre-coup baseline (базе до переворота), но с отдельным observability caution: дата самих наблюдений и дата публичной доступности метаданных не должны смешиваться.
 
 ## Observation & Coverage применены
 
-В Batch 002 для каждой строки предусмотрены поля:
+Batch 003 усиливает следующие guards:
 
 ```text
-source_family
-access_mode
-original_source_status
-cutoff_admissibility
-independence_group
-coverage_segment
-base_rate_status
-information_amplification_status
-possible_coordination_status
-representation_reality_gap_status
+SURVEY_ATTITUDE != OBJECTIVE_EVENT_PROBABILITY
+NATIONAL_AVERAGE != LOCAL_PRESSURE
+MARKET_PRICE != HOUSEHOLD_FOOD_INSECURITY
+PROGRAM_TARGET != PROGRAM_EFFECT
+RETROSPECTIVE_TOTAL != EARLY_CUTOFF_INPUT
+DATA_COLLECTION_TIME != PUBLIC_OBSERVABILITY_TIME
 ```
 
-Особенно важно:
+Кроме того сохраняются:
 
 ```text
+OBSERVABILITY != PREVALENCE
 TEST_POSITIVITY != POPULATION_PREVALENCE
 EVENT_REPORTING != POPULATION_RATE
 INTERNET_SHUTDOWN != REDUCED_SOCIAL_ACTIVITY
@@ -70,38 +70,31 @@ HUMANITARIAN_PROGRAM != PROVEN_STABILIZATION
 - не назначены числовые оценки latent pressure;
 - не заполнены отсутствующие домены придуманными значениями;
 - retrospective evidence не перенесено в ранние snapshot;
-- отсутствие записи не интерпретируется как отсутствие процесса;
-- один source family не считается независимым множественным подтверждением.
+- один source family не считается независимым множественным подтверждением;
+- поздние сводные данные не используются как будто они были доступны раньше;
+- нет попытки объявить один survey, один гуманитарный отчёт или один price monitor доказательством системного состояния страны.
 
-## Следующий collection batch — Batch 003
+## Оставшиеся крупные пробелы перед первым EvidenceState
 
 ### Россия–Украина
 
-Приоритет:
-
-1. институциональное доверие и ожидания;
-2. regional inequality (региональное неравенство) и household pressure (давление на домохозяйства);
-3. идентичность / язык / культура / коллективная память;
-4. религиозные институты и межгрупповые связи;
-5. здоровье и COVID вне образовательного слоя;
-6. информационная экология, информационные операции и agenda amplification (усиление повестки);
-7. contemporaneous 2021 energy/revenue data, чтобы заменить поздние ретроспективные сводки;
-8. food / water / fuel access на региональном уровне;
-9. дополнительные stabilizers: локальные связи, работающие институты, адаптация и международные механизмы.
+1. contemporaneous 2021 energy/revenue data для замены поздних энергетических сводок;
+2. здоровье/COVID вне образовательного слоя;
+3. язык, культура, коллективная память и религиозные институты — только из источников, реально доступных к cutoff;
+4. информационные операции / amplification / representation-reality gaps;
+5. regional household inequality и basic-needs access;
+6. дополнительные stabilizers и negative controls.
 
 ### Мьянма
 
-Приоритет:
-
-1. образование / студенты / учителя;
-2. этнические, религиозные и региональные группы;
-3. migration / displacement;
-4. food / water access отдельно от общего макроэкономического давления;
-5. климат / наводнения / сельское хозяйство;
-6. малые вооружённые и невооружённые группы и их coalescence;
-7. diaspora / donations / resistance financing;
-8. информационные операции, слухи, propaganda / counter-propaganda и representation-reality gaps;
-9. stabilizers и counter-pressures.
+1. образование / учителя / студенты с contemporaneous 2021 источниками;
+2. этнические, религиозные и региональные group-specific signals;
+3. contemporaneous displacement counts по нескольким cutoff, а не только year-end totals;
+4. вода, климат, наводнения, сельское хозяйство отдельно от общей экономики;
+5. малые вооружённые/невооружённые группы и их coalescence;
+6. diaspora / donations / resistance financing;
+7. информационные операции и representation-reality gaps;
+8. дополнительные stabilizers / counter-pressures.
 
 ## Gate до EvidenceState
 
