@@ -1,0 +1,6 @@
+edge_id,case_id,historical_node_id,resource_flow_id,relation_type,claim,confidence,status
+MM-XR-001,myanmar_post_coup,MM-H2-003,MM-RF-004,SHAPES_REVENUE_BASE,"The long-standing conflict-resource political economy in jade is linked to military and military-connected revenue channels observed in the 2021 source corpus.",MEDIUM_HIGH,WORKING
+MM-XR-002,myanmar_post_coup,MM-H2-003,MM-RF-005,SHAPES_TERRITORIAL_REVENUE,"The jade political economy provides an actor-specific revenue channel for KIO/A through access fees and taxation.",MEDIUM_HIGH,WORKING
+MM-XR-003,myanmar_post_coup,MM-H2-003,MM-RF-006,SHAPES_NONSTATE_RESOURCE_BASE,"The jade economy is linked to identified Arakan Army revenue streams, but this does not imply that all post-coup resistance shares the same financing model.",MEDIUM,WORKING
+MM-XR-004,myanmar_post_coup,MM-H2-002,MM-RF-001,INSTITUTIONAL_RESOURCE_CONTROL,"Military constitutional/institutional autonomy coexisted with military control of major holding companies, creating a structural economic base independent of ordinary civilian political competition.",MEDIUM,REVIEW_REQUIRED
+MM-XR-005,myanmar_post_coup,MM-H3-002,MM-RF-001,RESOURCE_STRUCTURE_PERSISTS_FROM,"Decades of military-dominated state formation are a plausible institutional precursor to continued military ownership/control of major commercial assets.",MEDIUM,REVIEW_REQUIRED
