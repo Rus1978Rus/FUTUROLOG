@@ -1,78 +1,112 @@
 # BULK_EVIDENCE_COLLECTION_STATUS v0.1
 
-**Статус:** `BULK_COLLECTION_PAUSED_FOR_TARGETED_BACKFILL / BATCH_007_COMPLETE / FORMAL_GAP_AUDIT_COMPLETE / NOT_READY_FOR_NUMERIC_EVIDENCESTATE`
+**Статус:** `TARGETED_BACKFILL_008_PARTIAL_PASS / PRE_EVIDENCESTATE_DRY_RUN_001_COMPLETE / NOT_READY_FOR_NUMERIC_EVIDENCESTATE`
 
 ## Что сделано
 
-После `HISTORICAL_SCHEMA_FREEZE_v0_1_RU.md` завершены широкие intake-пакеты Batch 001–007 для двух пилотных кейсов:
+После `HISTORICAL_SCHEMA_FREEZE_v0_1_RU.md` завершены широкие intake-пакеты Batch 001–007 для двух пилотных кейсов и выполнен `FORMAL_GAP_AUDIT_v0_1_RU.md`.
 
-- `russia_ukraine/`;
-- `myanmar_post_coup_civil_war/`.
+После formal gap audit выполнен targeted backfill 008:
 
-После Batch 007 выполнен отдельный `FORMAL_GAP_AUDIT_v0_1_RU.md`.
+- `russia_ukraine/targeted_backfill_008.csv`;
+- `myanmar_post_coup_civil_war/targeted_backfill_008.csv`.
 
-Главный вывод: широкое накопление данных уже дало достаточную карту покрытия. Продолжать просто добавлять новые широкие batch сейчас неэффективно. Следующий этап — только `TARGETED_BACKFILL_008` по блокирующим пробелам.
+Затем проведён первый нечисловой прогон:
 
-## Россия–Украина — blocking gaps
+- `PRE_EVIDENCESTATE_DRY_RUN_001_RU.md`.
 
-1. regional household inequality / affordability;
-2. language / identity / culture / collective memory с несколькими независимыми source families;
-3. religion / religious institutions / intergroup relations;
-4. household food / water / fuel access;
-5. complete topology-of-coverage map;
-6. negative controls и дополнительные stabilizers.
+## Targeted backfill 008 — результат
 
-## Мьянма — blocking gaps
+### Россия–Украина
 
-1. numeric displacement snapshots из уже найденных contemporaneous UNHCR sensors;
-2. diaspora / donations / external-support provenance для non-state actors;
-3. content-level contemporaneous information-operation evidence;
-4. direct water-access / flood-impact records beyond structural baseline;
-5. более точная временная карта small-group formation / coalescence / fragmentation;
-6. negative controls и дополнительные stabilizers.
+Частично закрыты blocking gaps по:
 
-## Gate после formal gap audit
+- религиозной самоидентификации и структуре конфессионального поля;
+- локальному доступу к воде в конфликтно-затронутых районах;
+- инфраструктурным water stabilizers;
+- structural public-service constraints.
+
+Остаются недостаточно закрытыми:
+
+- regional household inequality / affordability;
+- language / culture / collective memory с несколькими независимыми source families;
+- food/fuel household access вне локальных humanitarian records;
+- complete topology-of-coverage;
+- systematic negative controls.
+
+### Мьянма
+
+Частично закрыты blocking gaps по:
+
+- diaspora donations / external-support provenance;
+- humanitarian diaspora support;
+- local-defense-group fragmentation and partial coalescence;
+- CSO/CBO/ethnic support networks;
+- chronology of weekly UNHCR displacement sensors.
+
+Остаются недостаточно закрытыми:
+
+- validated numeric displacement values из underlying maps/PDF;
+- content-level contemporaneous information-operation evidence;
+- direct water/flood-impact evidence по нескольким регионам;
+- systematic negative controls;
+- full external-support scale and allocation.
+
+## PRE_EVIDENCESTATE_DRY_RUN_001
+
+Нечисловой dry run выполнен без итогового score и без использования известного исхода как входа.
+
+Результат:
 
 ```text
-MULTIPLE_SOURCE_FAMILIES: PARTIAL_PASS
-PRESSURE_AND_STABILIZERS: PARTIAL_PASS
-RETROSPECTIVE_CUTOFF_GUARD: PASS
-TOPOLOGY_GAPS_IDENTIFIED: PASS
-MISSING_DOMAINS_EXPLICIT: PASS
-SAME_FROZEN_SCHEMA: PASS
+SCHEMA_EXPRESSIVENESS: PASS
+PRESSURE_AND_STABILIZER_COEXISTENCE: PASS
+OBSERVATION_GAP_VISIBILITY: PASS
+RETROSPECTIVE_CUTOFF_DISCIPLINE: PASS
+SOCIAL_GROUP_FIELD_APPLICABILITY: PASS
 READY_FOR_NUMERIC_EVIDENCESTATE: NO
-READY_FOR_NON_NUMERIC_PRE_EVIDENCESTATE_DRY_RUN: ALMOST
 ```
 
-## Обязательные guards
+Схема смогла представить оба кейса без добавления нового архитектурного класса.
+
+## Ключевые guards
 
 ```text
 OBSERVABILITY != PREVALENCE
 VISIBLE_EXCEPTION != BASE_RATE
-DOMAIN_PRESENT != DOMAIN_WELL_COVERED
-SOURCE_COUNT != INDEPENDENT_CONFIRMATION
-SENSOR_PRESENT != MEASUREMENT_IMPORTED
-RETROSPECTIVE_KNOWLEDGE != CUTOFF_KNOWLEDGE
+PRESSURE != OUTCOME
+RESOURCE_CAPACITY != INTENT
+NARRATIVE_EXISTS != POPULATION_BELIEF
+SENSOR_EXISTS != NUMERIC_VALUE_VALIDATED
+EVIDENCE_GAP != ZERO_PHENOMENON
 SAME_SCHEMA != SAME_OBSERVABILITY
-CROSS_CASE_SCORE_DIFFERENCE != TRUE_STATE_DIFFERENCE
 ```
 
 ## Следующий разрешённый этап
 
-`TARGETED_BACKFILL_008`.
+Широкий Batch 009 НЕ открывается.
 
-После него выполняется повторный formal gap audit. Если critical `EVIDENCE_GAP` по обязательным слоям закрыты, разрешается `PRE_EVIDENCESTATE_DRY_RUN` — нечисловой прогон состояния доказательств без прогноза и без числовой калибровки.
+Следующий порядок:
 
-Числовой EvidenceState остаётся заблокирован до отдельного calibration/evaluation gate.
+```text
+LEAKAGE_AUDIT_001
+→ NEGATIVE_CONTROL_BACKFILL_009
+→ COVERAGE_TOPOLOGY_MATRIX_001
+→ SECOND_CODING_CHECK
+→ NUMERIC_EVIDENCESTATE_GATE_REVIEW
+```
+
+Числовой EvidenceState остаётся заблокирован до прохождения этих gates.
 
 ## Статус
 
 ```text
 BATCH_001_TO_007_COMPLETE
 FORMAL_GAP_AUDIT_COMPLETE
-TARGETED_BACKFILL_REQUIRED
+TARGETED_BACKFILL_008_PARTIAL_PASS
+PRE_EVIDENCESTATE_DRY_RUN_001_COMPLETE
 NUMERIC_EVIDENCESTATE_BLOCKED
-NON_NUMERIC_DRY_RUN_NEAR_READY
 SCHEMA_FREEZE_PRESERVED
+FORECAST_VALIDATION_NOT_CLAIMED
 NOT_VALIDATED
 ```
