@@ -1,6 +1,6 @@
 # BULK_EVIDENCE_COLLECTION_STATUS v0.1
 
-**Статус:** `COVERAGE_TOPOLOGY_MATRIX_001_COMPLETE / NEGATIVE_CONTROL_BACKFILL_009_PARTIAL / SECOND_CODING_CHECK_READY / NOT_READY_FOR_NUMERIC_EVIDENCESTATE`
+**Статус:** `SECOND_CODING_CHECK_001_COMPLETE / DOMAIN_NEUTRAL_ADAPTER_v0_2_DRAFT_CREATED / NUMERIC_GATE_REVIEW_001_DENIED / NOT_READY_FOR_NUMERIC_EVIDENCESTATE`
 
 ## Что сделано
 
@@ -11,27 +11,61 @@
 - targeted backfill 008 для Россия–Украина и Мьянмы;
 - `PRE_EVIDENCESTATE_DRY_RUN_001_RU.md`;
 - `LEAKAGE_AUDIT_001_RU.md`;
-- начало `NEGATIVE_CONTROL_BACKFILL_009_RU.md` с переиндексацией уже существующих stabilizers/counter-signals;
+- `NEGATIVE_CONTROL_BACKFILL_009_RU.md` — существующие stabilizers/counter-signals переиндексированы, targeted source backfill остаётся partial;
 - `COVERAGE_TOPOLOGY_MATRIX_001_RU.md`;
-- machine-readable `coverage_topology_matrix_001.csv`.
+- machine-readable `coverage_topology_matrix_001.csv`;
+- `SECOND_CODING_CHECK_001_RU.md`;
+- immutable `FIRST_CODING_LEDGER_001.csv`;
+- `DOMAIN_NEUTRAL_EVIDENCESTATE_ADAPTER_v0_2_DRAFT_RU.md`;
+- `BLIND_SECOND_CODER_PACKET_001_RU.md`;
+- `NUMERIC_EVIDENCESTATE_GATE_REVIEW_001_RU.md`.
 
-## Coverage topology — главный результат
+## Second-coding check — результат
 
-Теперь корпус хранит не только факт наличия evidence, но и структуру наблюдаемости.
-
-Для каждого крупного сегмента зафиксировано качественное состояние:
+Повторная кодировка выбранного подмножества evidence показала, что основные guards сохраняются:
 
 ```text
-STRONG
-MODERATE
-WEAK
-SENSOR_ONLY
-RETROSPECTIVE_ONLY
-GAP
-DEGRADED_BY_ACCESS
+PRESSURE != OUTCOME
+STABILIZER != PROVEN_STABILIZATION
+NARRATIVE_EXISTS != POPULATION_BELIEF
+PROJECTION != OBSERVED_COUNT
+SENSOR_EXISTS != NUMERIC_VALUE_VALIDATED
+RETROSPECTIVE_KNOWLEDGE != CUTOFF_KNOWLEDGE
 ```
 
-Это не score состояния страны. Это описание того, насколько хорошо FUTUROLOG способен видеть соответствующую часть реальности.
+Но этот repeat coding выполнен тем же AI-ассистентом и поэтому НЕ считается true independent second coding.
+
+```text
+REPEAT_CODING != INDEPENDENT_CODING
+CONSISTENCY != VALIDATION
+```
+
+Создан frozen first-code ledger и отдельный blind packet для внешнего/отдельного coder.
+
+## Критическая находка: adapter-fit
+
+`EVIDENCE_STATE_ADAPTER_SPEC v0.1` использует primary classes:
+
+```text
+MILITARY_BUILDUP
+DIPLOMATIC_COERCION_OR_WARNING
+ECONOMIC_ENERGY_STRESS
+```
+
+Они подходят Russia–Ukraine pilot, но не являются нейтральным denominator для Мьянмы.
+
+Поэтому:
+
+```text
+SAME_HISTORICAL_SCHEMA != SAME_EVIDENCESTATE_ADAPTER_FIT
+DOMAIN_SPECIFIC_DENOMINATOR != CROSS_DOMAIN_COMPARABILITY
+```
+
+v0.1 не переписывается. Создан отдельный `DOMAIN_NEUTRAL_EVIDENCESTATE_ADAPTER_v0_2_DRAFT_RU.md` со статусом DRAFT / NOT_ACTIVE.
+
+## Coverage topology — состояние
+
+Corpus хранит структуру наблюдаемости, а не только общий coverage.
 
 Ключевые guards:
 
@@ -43,101 +77,49 @@ SAME_COVERAGE_PERCENT != SAME_COVERAGE_TOPOLOGY
 CROSS_CASE_SCORE_DIFFERENCE != TRUE_STATE_DIFFERENCE
 ```
 
-## Россия–Украина — topology summary
-
-Сильнее наблюдаются:
-
-- formal institutions;
-- military/security public signals;
-- macro/energy/resource evidence;
-- polling/institutional expectations;
-- health/education formal systems;
-- public information-manipulation narratives;
-- international assistance/sanctions.
-
-Слабее наблюдаются:
-
-- household normality;
-- food/fuel affordability at household level;
-- closed messengers/private groups;
-- small informal groups;
-- local intergroup relations;
-- real prevalence and behavioral effect of narratives.
-
-## Мьянма — topology summary
-
-Сильнее наблюдаются:
-
-- humanitarian consequences;
-- local food/fuel prices;
-- displacement sensors;
-- professional-group mobilization;
-- macro/banking/logistics disruptions;
-- internet-access degradation;
-- visible conflict events.
-
-Слабее наблюдаются:
-
-- remote/inaccessible regions;
-- informal economy;
-- content-level information operations/rumours;
-- exact scale/command of small armed groups;
-- household normality;
-- direct water-security coverage;
-- processes hidden after internet/media repression.
-
-## Cross-case comparability
-
-Одинаковая frozen schema применяется к обоим кейсам, но topology сильно различается.
-
-Поэтому будущий numeric EvidenceState обязан хранить `coverage topology annotation`, а не один агрегированный coverage percent.
-
 ## Negative controls — состояние
 
-`NEGATIVE_CONTROL_BACKFILL_009` остаётся частично незавершённым.
+Корпус больше не является pressure-only: уже индексированы stabilizers, de-escalation/functional-recovery signals, uncertainty/normality signals, alternative explanations и fragmentation signals.
 
-Уже переиндексированы существующие:
-
-- stabilizers;
-- de-escalation / functional-recovery signals;
-- normality / uncertainty signals;
-- alternative explanations;
-- fragmentation signals, не позволяющие автоматически объявить coalition/unified command.
-
-Но ещё требуются дополнительные targeted false-positive analogues и systematic counter-signal search.
+Но targeted counter-signal search и false-positive analogues всё ещё недостаточны для honest `observed_noise`.
 
 ```text
 BALANCED_RECORD_COUNT != BALANCED_REALITY
-COUNTERSIGNAL != PROOF_OF_SAFETY
-PRESSURE != PROOF_OF_OUTCOME
+NO_COUNTERSIGNAL_SEARCH -> NO_VALID_NOISE_ESTIMATE
 ```
 
-## Gate после topology matrix
+## Numeric gate review 001
+
+Первый formal numeric gate review завершён с решением:
 
 ```text
-LEAKAGE_AUDIT: PASS_WITH_RESIDUAL_SELECTION_RISK
-NEGATIVE_CONTROL_EXISTING_INDEX: PASS
-SYSTEMATIC_NEGATIVE_CONTROL_BACKFILL: PARTIAL
-COVERAGE_TOPOLOGY_MATRIX: PASS
-BLIND_SPOTS_EXPLICIT: PASS
-CROSS_CASE_OBSERVABILITY_ASYMMETRY: PASS
-READY_FOR_SECOND_CODING_CHECK: YES
-READY_FOR_NUMERIC_EVIDENCESTATE: NO
+READY_FOR_NUMERIC_EVIDENCESTATE = NO
 ```
 
-## Следующий разрешённый этап
+Причины:
+
+1. true blind second-coder result ещё отсутствует;
+2. agreement report невозможен до second code;
+3. domain-neutral adapter v0.2 пока draft, а v0.1 cross-case fit недостаточен;
+4. negative-control targeted source backfill остаётся partial;
+5. `observed_noise` остаётся blocked.
+
+Gate сработал по назначению: красивое число не создаётся раньше методологической готовности.
+
+## Reopen conditions
+
+Следующий numeric gate (`NUMERIC_EVIDENCESTATE_GATE_REVIEW_002`) разрешён только после:
 
 ```text
-SECOND_CODING_CHECK
-→ NEGATIVE_CONTROL_TARGETED_SOURCE_BACKFILL (если disagreement/gap требует)
-→ NUMERIC_EVIDENCESTATE_GATE_REVIEW
+TRUE_SECOND_CODE_RECEIVED
+AGREEMENT_REPORT_COMPLETE
+DOMAIN_NEUTRAL_ADAPTER_REVIEW_COMPLETE
+NEGATIVE_CONTROL_BACKFILL_MATERIALLY_IMPROVED
 ```
 
-`SECOND_CODING_CHECK` должен повторно закодировать подмножество evidence/snapshots без просмотра первой кодировки и измерить устойчивость интерпретации.
+До этого можно продолжать non-numeric diagnostic work, provenance improvement, targeted source collection и external review.
 
-Числовой EvidenceState остаётся заблокирован.
-
-## Статус
+## Текущий статус
 
 ```text
 BATCH_001_TO_007_COMPLETE
@@ -147,9 +129,12 @@ PRE_EVIDENCESTATE_DRY_RUN_001_COMPLETE
 LEAKAGE_AUDIT_001_COMPLETE
 NEGATIVE_CONTROL_BACKFILL_009_PARTIAL
 COVERAGE_TOPOLOGY_MATRIX_001_COMPLETE
-SECOND_CODING_CHECK_READY
+SECOND_CODING_CHECK_001_COMPLETE
+FIRST_CODING_LEDGER_001_FROZEN
+BLIND_SECOND_CODER_PACKET_001_READY
+DOMAIN_NEUTRAL_ADAPTER_v0_2_DRAFT_CREATED
+NUMERIC_GATE_REVIEW_001_DENIED
 NUMERIC_EVIDENCESTATE_BLOCKED
-SCHEMA_FREEZE_PRESERVED
+HISTORICAL_SCHEMA_FREEZE_PRESERVED
 FORECAST_VALIDATION_NOT_CLAIMED
 NOT_VALIDATED
-```
