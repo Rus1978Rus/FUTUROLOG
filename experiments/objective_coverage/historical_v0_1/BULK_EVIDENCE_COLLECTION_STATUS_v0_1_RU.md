@@ -1,6 +1,6 @@
 # BULK_EVIDENCE_COLLECTION_STATUS v0.1
 
-**Статус:** `MULTI_MODEL_AGREEMENT_REPORT_COMPLETE / ADAPTER_v0_2_REVISED_DRAFT / ATOMIC_RECODE_PACKET_002_READY / NOT_READY_FOR_NUMERIC_EVIDENCESTATE`
+**Статус:** `ATOMIC_RECODE_002_COMPLETE / AGREEMENT_REPORT_002_COMPLETE / RUBRIC_V0_3_CANDIDATE_CREATED / FOCUSED_RECODE_003_READY / NOT_READY_FOR_NUMERIC_EVIDENCESTATE`
 
 ## Что сделано
 
@@ -8,73 +8,91 @@
 
 Дополнительно завершены:
 
-- multi-model external coding pilot (Copilot, Grok, Claude) по `BLIND_SECOND_CODER_PACKET_001_RU.md`;
+- multi-model external coding pilot 001 (Copilot, Grok, Claude);
 - `AGREEMENT_REPORT_001_RU.md`;
 - targeted negative-control backfill 010;
-- patch `DOMAIN_NEUTRAL_EVIDENCESTATE_ADAPTER_v0_2_DRAFT_RU.md` по найденным disagreement;
-- новый `ATOMIC_RECODE_PACKET_002_RU.md`.
+- revised draft `DOMAIN_NEUTRAL_EVIDENCESTATE_ADAPTER_v0_2_DRAFT_RU.md`;
+- `ATOMIC_RECODE_PACKET_002_RU.md`;
+- multi-model atomic recode 002 (Copilot, Claude, Grok);
+- `AGREEMENT_REPORT_002_RU.md`;
+- `RUBRIC_V0_3_CANDIDATE_RU.md`;
+- `FOCUSED_RECODE_PACKET_003_RU.md`.
 
-## Что показал multi-model audit
+## Результат atomic recode 002
 
-Agreement оказался переменным: часть items кодируется устойчиво, но dual-use evidence, retrospective evidence, sensor-only и mixed observed+projection claims создавали систематические расхождения.
+После атомизации claims и явных cutoff базовые правила резко стабилизировались.
 
-Ключевой вывод:
-
-```text
-CODER_DISAGREEMENT != CODER_ERROR_BY_DEFAULT
-DISAGREEMENT_CLUSTER => RUBRIC_REVIEW
-```
-
-Главные дефекты старой формы coding:
-
-1. один scalar `direction` смешивал pressure и stabilizer;
-2. cutoff FAIL не механически обнулял contribution;
-3. strength смешивал силу события, масштаб покрытия и качество evidence;
-4. sensor existence можно было ошибочно кодировать как strength;
-5. observed facts и projections иногда жили в одной row;
-6. информационный message content можно было перепутать с system pressure role;
-7. расплывчатые cutoff labels создавали различия трактовки.
-
-## Patch v0.2
-
-`DOMAIN_NEUTRAL_EVIDENCESTATE_ADAPTER_v0_2_DRAFT_RU.md` теперь содержит:
+Pairwise agreement:
 
 ```text
-MIXED_CLAIM => ATOMIZE_BEFORE_CODING
-CUTOFF_FAIL => pressure_signal = 0
-CUTOFF_FAIL => stabilizer_signal = 0
-CUTOFF_FAIL => event_strength = 0
-CUTOFF_CONDITIONAL => NO_NUMERIC_CONTRIBUTION
-SIGNAL_STRENGTH != COVERAGE_SCALE
-SIGNAL_STRENGTH != EVIDENCE_QUALITY
-SENSOR_EXISTENCE != EVENT_STRENGTH
-PROJECTION != OBSERVED_COUNT
-MESSAGE_CONTENT_DIRECTION != SYSTEM_PRESSURE_DIRECTION
+CUTOFF:
+Copilot-Claude 11/11
+Copilot-Grok   11/11
+Claude-Grok    11/11
+
+PRESSURE_SIGNAL:
+Copilot-Claude 10/11
+Copilot-Grok   10/11
+Claude-Grok    11/11
+
+STABILIZER_SIGNAL:
+Copilot-Claude 10/11
+Copilot-Grok   10/11
+Claude-Grok    11/11
+
+EVENT_STRENGTH exact:
+Copilot-Claude 8/11
+Copilot-Grok   8/11
+Claude-Grok    9/11
 ```
 
-Вместо одного signed direction введены отдельные `pressure_signal` и `stabilizer_signal`.
-
-Отдельно хранятся:
+Все три модели:
 
 ```text
-event_strength
-coverage_scale
-evidence_quality
-confidence
+- одинаково выполнили cutoff FAIL zeroing;
+- не импортировали retrospective rows;
+- сохранили sensor-only item с event_strength=0;
+- в основном одинаково разделили pressure и stabilizer.
 ```
 
-## Atomic recode packet 002
+Значит disagreement теперь концентрируется не в leakage discipline, а в более узких семантических границах.
 
-Создан `ATOMIC_RECODE_PACKET_002_RU.md` с точными snapshot cutoffs:
+## Остаточные дефекты
+
+1. `DEESCALATORY_MESSAGE_CONTENT` иногда ошибочно превращается в `STABILIZER_SIGNAL`.
+2. Граница `SUBSTANTIAL` vs `SEVERE` остаётся недостаточно операциональной.
+3. `coverage_scale` иногда выводится из интенсивности события без явного scope/denominator.
+4. Projection не отделён достаточно жёстко от observed event strength.
+
+## Rubric v0.3 candidate
+
+Создан `RUBRIC_V0_3_CANDIDATE_RU.md`.
+
+Ключевые патчи:
 
 ```text
-Russia–Ukraine cutoff = 2022-02-23T23:59:59Z
-Myanmar cutoff = 2021-06-30T23:59:59Z
+DEESCALATORY_MESSAGE_CONTENT != STABILIZER_SIGNAL
+MESSAGE_CONTENT_DIRECTION != SYSTEM_PRESSURE_ROLE
+OBSERVED_EVENT_STRENGTH != PROJECTED_RISK_MAGNITUDE
+PROJECTED => observed_event_strength = 0
+PROJECTED => projected_magnitude = 0..3
+NO_EXPLICIT_SCOPE => coverage_scale = UNKNOWN
+NO_DENOMINATOR => DO_NOT_INFER_POPULATION_SCALE
+SEVERE_REQUIRES_EXPLICIT_SYSTEM_WIDE_OR_OPERATIONALLY_CRITICAL_CRITERION
 ```
 
-Mixed claims разделены: observed coping behavior и hunger projection теперь разные atomic rows; sensor-only и retrospective rows имеют отдельные правила.
+## Focused recode packet 003
 
-Пакет предназначен для нового multi-model rubric stress test. Он НЕ заявляется как outcome-blind validation.
+Создан маленький `FOCUSED_RECODE_PACKET_003_RU.md` только по остаточным спорным классам:
+
+- de-escalatory narrative vs system pressure role;
+- countermeasure;
+- banking disruption strength;
+- household coping scale;
+- projection magnitude;
+- sensor-only rule.
+
+Цель — не повторять большой тест, а проверить, исчезли ли конкретные известные ambiguity clusters.
 
 ## Numeric gate
 
@@ -83,8 +101,7 @@ Mixed claims разделены: observed coping behavior и hunger projection �
 Причины:
 
 ```text
-ADAPTER_v0_2_NOT_ACTIVE
-ATOMIC_RECODE_NOT_YET_COMPLETED
+RUBRIC_V0_3_NOT_YET_STRESS_TESTED
 CHANNEL_AGGREGATION_NOT_CALIBRATED
 NEGATIVE_CONTROL_FALSE_POSITIVE_ANALOGUES_INCOMPLETE
 TRUE_OUTCOME_BLIND_VALIDATION_NOT_PROVEN
@@ -94,14 +111,12 @@ OBSERVED_NOISE_BLOCKED
 ## Следующий разрешённый порядок
 
 ```text
-ATOMIC_RECODE_PACKET_002 -> MULTI_MODEL_RECODE
-→ AGREEMENT_REPORT_002
-→ ADAPTER_v0_2_REVIEW
+FOCUSED_RECODE_PACKET_003 -> COPILOT + CLAUDE + GROK
+→ AGREEMENT_REPORT_003
+→ RUBRIC_V0_3_GATE_DECISION
 → FALSE_POSITIVE_ANALOGUES_BACKFILL
 → NUMERIC_EVIDENCESTATE_GATE_REVIEW_002
 ```
-
-Если recode покажет, что базовые правила cutoff/sensor/projection/pressure-vs-stabilizer стали устойчивыми между моделями, v0.2 можно переводить в `ACTIVE_CANDIDATE`, но не в `VALIDATED`.
 
 ## Текущий статус
 
@@ -114,9 +129,11 @@ COVERAGE_TOPOLOGY_MATRIX_001_COMPLETE
 FIRST_CODING_LEDGER_001_FROZEN
 MULTI_MODEL_CODING_PILOT_001_COMPLETE
 AGREEMENT_REPORT_001_COMPLETE
+ATOMIC_RECODE_PACKET_002_COMPLETE
+AGREEMENT_REPORT_002_COMPLETE
+RUBRIC_V0_3_CANDIDATE_CREATED
+FOCUSED_RECODE_PACKET_003_READY
 NEGATIVE_CONTROL_TARGETED_BACKFILL_010_STARTED
-DOMAIN_NEUTRAL_ADAPTER_v0_2_REVISED_DRAFT
-ATOMIC_RECODE_PACKET_002_READY
 NUMERIC_GATE_REVIEW_001_DENIED
 NUMERIC_EVIDENCESTATE_BLOCKED
 HISTORICAL_SCHEMA_FREEZE_PRESERVED
