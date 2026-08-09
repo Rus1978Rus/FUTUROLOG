@@ -1,0 +1,39 @@
+case_id,segment,coverage_status,primary_visibility,main_blind_spot,numeric_ready
+russia_ukraine_2021_2022,formal_state_institutions,STRONG,"official decisions; reforms; public positions; international programs","informal execution; local practice",NO
+russia_ukraine_2021_2022,military_security_signals,STRONG,"public buildup; warnings; diplomatic pressure","closed plans; intent; non-public intelligence",NO
+russia_ukraine_2021_2022,macro_energy_reserves,STRONG_MODERATE,"central-bank; IEA; export and energy signals","conversion of resources into specific decisions or military allocation",NO
+russia_ukraine_2021_2022,national_polling_expectations,STRONG_MODERATE,"formal polling sensors","lived experience; nonresponse; small local groups",NO
+russia_ukraine_2021_2022,idp_contact_line,MODERATE_STRONG,"UNHCR; access; social services; mobility restrictions","micro-local daily life and informal ties",NO
+russia_ukraine_2021_2022,health_covid,MODERATE_STRONG,"WHO; financing; adaptation; out-of-pocket burden","regional household access",NO
+russia_ukraine_2021_2022,education,MODERATE_STRONG,"learning pressure; reform; adaptation","local effective access and quality",NO
+russia_ukraine_2021_2022,water_critical_services,MODERATE,"local conflict-affected records; restoration projects","national household-level picture",NO
+russia_ukraine_2021_2022,food_household_affordability,WEAK,"limited structural/local signals","systematic regional household affordability",NO
+russia_ukraine_2021_2022,fuel_household_access,WEAK,"macro and market layer","household access and regional variation",NO
+russia_ukraine_2021_2022,social_inequality,WEAK_MODERATE,"structural institutional; education; health inequalities","complete regional/group inequality matrix",NO
+russia_ukraine_2021_2022,language_identity_memory,WEAK_MODERATE,"selected polling and identity sensors","daily practices; small groups; interpretation dynamics",NO
+russia_ukraine_2021_2022,religion_religious_institutions,MODERATE,"identity/confessional sensor","real intergroup ties and local institutional role",NO
+russia_ukraine_2021_2022,information_manipulation,MODERATE_STRONG,"contemporaneous public narrative catalogues","population exposure; belief; behavioral effect",NO
+russia_ukraine_2021_2022,closed_social_media_messengers,GAP_DEGRADED_BY_ACCESS,"indirect/secondary traces","private groups; deleted content; inaccessible communities",NO
+russia_ukraine_2021_2022,small_informal_groups,WEAK,"selected visible nodes","large low-visibility local-group field",NO
+russia_ukraine_2021_2022,household_normality,WEAK,"limited humanitarian/polling evidence","large invisible denominator of normal interactions",NO
+russia_ukraine_2021_2022,stabilizers_counter_signals,MODERATE,"institutional adaptation; IDP; health; education; water; alternative explanations","false-positive analogues; systematic normality search",NO
+myanmar_post_coup,formal_state_institutions,MODERATE,"coup institutional actions; public decrees; international reporting","internal execution; closed command structures",NO
+myanmar_post_coup,military_conflict_events,MODERATE_STRONG,"UN/OHCHR/humanitarian event reporting","remote inaccessible areas; reporting bias",NO
+myanmar_post_coup,macro_banking_payments,STRONG_MODERATE,"World Bank; banking; logistics; payment disruptions","informal economy and local adaptation",NO
+myanmar_post_coup,food_fuel_prices,STRONG_MODERATE,"WFP regional monitoring","household denominator and unequal access",NO
+myanmar_post_coup,water_access,WEAK,"limited humanitarian/regional signals","systematic water-security map",NO
+myanmar_post_coup,agriculture_climate_disasters,MODERATE,"structural vulnerability; Rakhine agriculture/fisheries","direct contemporaneous impacts across multiple regions",NO
+myanmar_post_coup,displacement,MODERATE_SENSOR_ONLY,"event evidence plus weekly UNHCR sensors","validated numeric totals for each cutoff",NO
+myanmar_post_coup,civil_disobedience_movement,STRONG_MODERATE,"professional-group participation","denominator; local variation; attrition",NO
+myanmar_post_coup,students_teachers_health_workers,MODERATE_STRONG,"OHCHR/UNICEF/UN reporting","representativeness and regional completeness",NO
+myanmar_post_coup,ethnic_religious_minorities,MODERATE,"selected conflict-exposure records","systematic nationwide group coverage",NO
+myanmar_post_coup,local_defense_groups_pdfs,MODERATE,"emergence; fragmentation; partial coalescence","size; arms; command; attrition",NO
+myanmar_post_coup,diaspora_donations,MODERATE_WEAK,"documented external support nodes","total scale; allocation; humanitarian versus military use",NO
+myanmar_post_coup,community_religious_support,MODERATE,"local assistance and resilience networks","national coverage and durability",NO
+myanmar_post_coup,health_covid,MODERATE,"pre-coup pressure; post-coup system weakness","reporting collapse and prevalence uncertainty",NO
+myanmar_post_coup,education,MODERATE,"facility disruption; pre-coup adaptation","national attendance and learning continuity",NO
+myanmar_post_coup,independent_media_journalists,MODERATE,"repression and media-space deterioration","activity that became invisible after repression",NO
+myanmar_post_coup,internet_platform_access,DEGRADED_BY_ACCESS,"shutdowns and restrictions are observable","content and activity hidden behind shutdowns",NO
+myanmar_post_coup,information_operations_rumours,WEAK,"broad information-environment degradation","content-level catalogue; prevalence; behavioral effect",NO
+myanmar_post_coup,household_lived_experience,WEAK_MODERATE,"humanitarian field observations","normality denominator and inaccessible communities",NO
+myanmar_post_coup,stabilizers_counter_signals,MODERATE,"humanitarian buffers; local support; partial logistics recovery","false-positive analogues; local ceasefire/normality pockets",NO
