@@ -1,121 +1,78 @@
 # BULK_EVIDENCE_COLLECTION_STATUS v0.1
 
-**Статус:** `BULK_COLLECTION_CONTINUES / BATCH_007_ADDED / NOT_READY_FOR_EVIDENCE_STATE`
+**Статус:** `BULK_COLLECTION_PAUSED_FOR_TARGETED_BACKFILL / BATCH_007_COMPLETE / FORMAL_GAP_AUDIT_COMPLETE / NOT_READY_FOR_NUMERIC_EVIDENCESTATE`
 
 ## Что сделано
 
-После `HISTORICAL_SCHEMA_FREEZE_v0_1_RU.md` продолжается фактическое наполнение двух исторических корпусов по одной и той же замороженной схеме.
-
-Созданы intake-пакеты Batch 001–007 для:
+После `HISTORICAL_SCHEMA_FREEZE_v0_1_RU.md` завершены широкие intake-пакеты Batch 001–007 для двух пилотных кейсов:
 
 - `russia_ukraine/`;
 - `myanmar_post_coup_civil_war/`.
 
-## Batch 007 — Россия–Украина
+После Batch 007 выполнен отдельный `FORMAL_GAP_AUDIT_v0_1_RU.md`.
 
-Главный прогресс — contemporaneous information ecology (информационная экология) 2021.
+Главный вывод: широкое накопление данных уже дало достаточную карту покрытия. Продолжать просто добавлять новые широкие batch сейчас неэффективно. Следующий этап — только `TARGETED_BACKFILL_008` по блокирующим пробелам.
 
-Добавлены:
+## Россия–Украина — blocking gaps
 
-- EUvsDisinfo 23 Dec 2021: более 2,700 новых примеров pro-Kremlin disinformation в базе за 2021, примерно треть из них была направлена против Украины;
-- EUvsDisinfo 16 Dec 2021: Украина как крупнейшая цель внутри накопленного мониторингового корпуса;
-- отдельный contemporaneous case 6 Dec 2021: нарратив о том, что предупреждения о российской агрессии являются выдуманной истерией;
-- отдельный contemporaneous case 2 Sep 2021: нарратив о внешнем контроле Украины со стороны США;
-- EU Foreign Affairs Council Jan 2022: strengthening resilience against cyber/hybrid attacks and foreign information manipulation как stabilizing institutional response;
-- поздний EEAS spike analysis 2022 сохранён только как `RETROSPECTIVE_REFERENCE` и не импортирован в 2021/early-2022 snapshots.
+1. regional household inequality / affordability;
+2. language / identity / culture / collective memory с несколькими независимыми source families;
+3. religion / religious institutions / intergroup relations;
+4. household food / water / fuel access;
+5. complete topology-of-coverage map;
+6. negative controls и дополнительные stabilizers.
 
-Ключевое различие:
+## Мьянма — blocking gaps
 
-```text
-NARRATIVE_EXISTS != POPULATION_BELIEF
-DATABASE_CASE_COUNT != EXPOSURE_RATE
-EXPOSURE != BEHAVIORAL_EFFECT
-```
+1. numeric displacement snapshots из уже найденных contemporaneous UNHCR sensors;
+2. diaspora / donations / external-support provenance для non-state actors;
+3. content-level contemporaneous information-operation evidence;
+4. direct water-access / flood-impact records beyond structural baseline;
+5. более точная временная карта small-group formation / coalescence / fragmentation;
+6. negative controls и дополнительные stabilizers.
 
-Таким образом, information-operations gap частично закрыт именно допустимыми по cutoff записями, а не поздней реконструкцией.
-
-## Batch 007 — Мьянма
-
-Добавлены:
-
-- ещё два contemporaneous UNHCR displacement sensors: 31 May и 21 Jun 2021;
-- OHCHR/UN 11 Jun 2021: эскалация в Kayah, Chin и Kachin, особенно в районах со значительными этническими и религиозными меньшинствами;
-- UNHCR/UN Myanmar 28 Jul 2021: local community and faith groups helping an estimated 200,000 newly displaced people как локальная stabilizing capacity;
-- Human Rights Council resolution of 12 Jul 2021 concerning Rohingya Muslims and other minorities как contemporaneous institutional minority-specific signal;
-- OHCHR 1 Apr 2021: early flight/displacement from renewed fighting with ethnic armed organizations, including Kayin;
-- UN Myanmar Research Digest Jul 2021 как свидетельство multi-source observation ecosystem across household, sectoral and group-specific assessments.
-
-Numeric totals из UNHCR карт по-прежнему НЕ импортированы без извлечения underlying PDF/data.
-
-## Observation & Coverage guards
-
-Batch 007 усиливает:
+## Gate после formal gap audit
 
 ```text
-NARRATIVE_EXISTS != POPULATION_BELIEF
-DATABASE_CASE_COUNT != POPULATION_EXPOSURE
-EXPOSURE != BEHAVIORAL_EFFECT
-MONITORED_MEDIA != WHOLE_INFORMATION_SPACE
-MINORITY_REGION_VIOLENCE != NATIONAL_RELIGIOUS_CONFLICT
-LOCAL_ASSISTANCE_NETWORK != NATIONAL_STABILIZATION
-INSTITUTIONAL_CONCERN != POPULATION_PREVALENCE
-SENSOR_EXISTS != NUMERIC_VALUE_VALIDATED
+MULTIPLE_SOURCE_FAMILIES: PARTIAL_PASS
+PRESSURE_AND_STABILIZERS: PARTIAL_PASS
+RETROSPECTIVE_CUTOFF_GUARD: PASS
+TOPOLOGY_GAPS_IDENTIFIED: PASS
+MISSING_DOMAINS_EXPLICIT: PASS
+SAME_FROZEN_SCHEMA: PASS
+READY_FOR_NUMERIC_EVIDENCESTATE: NO
+READY_FOR_NON_NUMERIC_PRE_EVIDENCESTATE_DRY_RUN: ALMOST
 ```
 
-Сохраняются все ранее принятые guards, включая:
+## Обязательные guards
 
 ```text
 OBSERVABILITY != PREVALENCE
 VISIBLE_EXCEPTION != BASE_RATE
-DATA_COLLECTION_TIME != PUBLIC_OBSERVABILITY_TIME
-NATIONAL_AVERAGE != LOCAL_PRESSURE
-CONTEMPORANEOUS_SIGNAL != RETROSPECTIVE_RECONSTRUCTION
-EVIDENCE_GAP != ZERO_PHENOMENON
+DOMAIN_PRESENT != DOMAIN_WELL_COVERED
+SOURCE_COUNT != INDEPENDENT_CONFIRMATION
+SENSOR_PRESENT != MEASUREMENT_IMPORTED
+RETROSPECTIVE_KNOWLEDGE != CUTOFF_KNOWLEDGE
+SAME_SCHEMA != SAME_OBSERVABILITY
+CROSS_CASE_SCORE_DIFFERENCE != TRUE_STATE_DIFFERENCE
 ```
 
-## Что сознательно НЕ сделано
+## Следующий разрешённый этап
 
-- `EvidenceState` не рассчитан;
-- число disinformation cases не превращено в процент людей, которые увидели или приняли нарратив;
-- отдельный информационный кейс не объявлен доказательством централизованной операции без отдельной attribution evidence;
-- поздний EEAS spike analysis не импортирован как contemporaneous 2021 input;
-- этническая/религиозная концентрация насилия в отдельных регионах Мьянмы не превращена в тезис о nationwide religious war;
-- локальная гуманитарная помощь не объявлена доказанной стабилизацией страны;
-- UNHCR map catalog всё ещё не используется как источник придуманных numeric totals.
+`TARGETED_BACKFILL_008`.
 
-## Оставшиеся крупные пробелы перед первым EvidenceState
+После него выполняется повторный formal gap audit. Если critical `EVIDENCE_GAP` по обязательным слоям закрыты, разрешается `PRE_EVIDENCESTATE_DRY_RUN` — нечисловой прогон состояния доказательств без прогноза и без числовой калибровки.
 
-### Россия–Украина
+Числовой EvidenceState остаётся заблокирован до отдельного calibration/evaluation gate.
 
-1. язык, культура, collective memory и религиозные институты с допустимыми cutoff-источниками;
-2. regional household inequality и food/water/fuel access;
-3. original release timing по нужным точкам международных резервов;
-4. дополнительные stabilizers и negative controls;
-5. measurement of information reach / audience exposure, если contemporaneous данные доступны;
-6. group-specific subclaims из contemporaneous human-rights and social reports.
+## Статус
 
-### Мьянма
-
-1. извлечь numeric displacement totals из underlying UNHCR maps;
-2. diaspora / donations / resistance financing из contemporaneous primary sources;
-3. contemporaneous information operations / rumours / propaganda / counter-propaganda;
-4. более детальные ethnic/religious group-specific signals без смешения групп;
-5. конкретные 2021 water/flood/agriculture shocks вне structural baseline;
-6. ранняя датировка взаимодействия малых resistance groups;
-7. дополнительные stabilizers и negative controls.
-
-## Gate до EvidenceState
-
-Переход к числовому EvidenceState разрешается только когда:
-
-1. есть несколько независимых source families по ключевым доменам;
-2. представлены pressure и stabilizer evidence;
-3. retrospective-only строки механически исключены из ранних cutoff;
-4. известны основные topology gaps;
-5. незаполненные домены явно перечислены;
-6. одинаковая замороженная схема применена к обоим кейсам;
-7. нет необходимости менять `HISTORICAL_SCHEMA_FREEZE v0.1`.
-
-До этого правильный статус:
-
-`PARTIAL_EVIDENCE / COLLECTION_CONTINUES`.
+```text
+BATCH_001_TO_007_COMPLETE
+FORMAL_GAP_AUDIT_COMPLETE
+TARGETED_BACKFILL_REQUIRED
+NUMERIC_EVIDENCESTATE_BLOCKED
+NON_NUMERIC_DRY_RUN_NEAR_READY
+SCHEMA_FREEZE_PRESERVED
+NOT_VALIDATED
+```
