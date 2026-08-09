@@ -1,102 +1,141 @@
 # BULK_EVIDENCE_COLLECTION_STATUS v0.1
 
-**Статус:** `TARGETED_BACKFILL_008_PARTIAL_PASS / PRE_EVIDENCESTATE_DRY_RUN_001_COMPLETE / NOT_READY_FOR_NUMERIC_EVIDENCESTATE`
+**Статус:** `COVERAGE_TOPOLOGY_MATRIX_001_COMPLETE / NEGATIVE_CONTROL_BACKFILL_009_PARTIAL / SECOND_CODING_CHECK_READY / NOT_READY_FOR_NUMERIC_EVIDENCESTATE`
 
 ## Что сделано
 
 После `HISTORICAL_SCHEMA_FREEZE_v0_1_RU.md` завершены широкие intake-пакеты Batch 001–007 для двух пилотных кейсов и выполнен `FORMAL_GAP_AUDIT_v0_1_RU.md`.
 
-После formal gap audit выполнен targeted backfill 008:
+Затем выполнены:
 
-- `russia_ukraine/targeted_backfill_008.csv`;
-- `myanmar_post_coup_civil_war/targeted_backfill_008.csv`.
+- targeted backfill 008 для Россия–Украина и Мьянмы;
+- `PRE_EVIDENCESTATE_DRY_RUN_001_RU.md`;
+- `LEAKAGE_AUDIT_001_RU.md`;
+- начало `NEGATIVE_CONTROL_BACKFILL_009_RU.md` с переиндексацией уже существующих stabilizers/counter-signals;
+- `COVERAGE_TOPOLOGY_MATRIX_001_RU.md`;
+- machine-readable `coverage_topology_matrix_001.csv`.
 
-Затем проведён первый нечисловой прогон:
+## Coverage topology — главный результат
 
-- `PRE_EVIDENCESTATE_DRY_RUN_001_RU.md`.
+Теперь корпус хранит не только факт наличия evidence, но и структуру наблюдаемости.
 
-## Targeted backfill 008 — результат
-
-### Россия–Украина
-
-Частично закрыты blocking gaps по:
-
-- религиозной самоидентификации и структуре конфессионального поля;
-- локальному доступу к воде в конфликтно-затронутых районах;
-- инфраструктурным water stabilizers;
-- structural public-service constraints.
-
-Остаются недостаточно закрытыми:
-
-- regional household inequality / affordability;
-- language / culture / collective memory с несколькими независимыми source families;
-- food/fuel household access вне локальных humanitarian records;
-- complete topology-of-coverage;
-- systematic negative controls.
-
-### Мьянма
-
-Частично закрыты blocking gaps по:
-
-- diaspora donations / external-support provenance;
-- humanitarian diaspora support;
-- local-defense-group fragmentation and partial coalescence;
-- CSO/CBO/ethnic support networks;
-- chronology of weekly UNHCR displacement sensors.
-
-Остаются недостаточно закрытыми:
-
-- validated numeric displacement values из underlying maps/PDF;
-- content-level contemporaneous information-operation evidence;
-- direct water/flood-impact evidence по нескольким регионам;
-- systematic negative controls;
-- full external-support scale and allocation.
-
-## PRE_EVIDENCESTATE_DRY_RUN_001
-
-Нечисловой dry run выполнен без итогового score и без использования известного исхода как входа.
-
-Результат:
+Для каждого крупного сегмента зафиксировано качественное состояние:
 
 ```text
-SCHEMA_EXPRESSIVENESS: PASS
-PRESSURE_AND_STABILIZER_COEXISTENCE: PASS
-OBSERVATION_GAP_VISIBILITY: PASS
-RETROSPECTIVE_CUTOFF_DISCIPLINE: PASS
-SOCIAL_GROUP_FIELD_APPLICABILITY: PASS
-READY_FOR_NUMERIC_EVIDENCESTATE: NO
+STRONG
+MODERATE
+WEAK
+SENSOR_ONLY
+RETROSPECTIVE_ONLY
+GAP
+DEGRADED_BY_ACCESS
 ```
 
-Схема смогла представить оба кейса без добавления нового архитектурного класса.
+Это не score состояния страны. Это описание того, насколько хорошо FUTUROLOG способен видеть соответствующую часть реальности.
 
-## Ключевые guards
+Ключевые guards:
 
 ```text
 OBSERVABILITY != PREVALENCE
-VISIBLE_EXCEPTION != BASE_RATE
-PRESSURE != OUTCOME
-RESOURCE_CAPACITY != INTENT
-NARRATIVE_EXISTS != POPULATION_BELIEF
-SENSOR_EXISTS != NUMERIC_VALUE_VALIDATED
-EVIDENCE_GAP != ZERO_PHENOMENON
+COLLECTABILITY != PREVALENCE
 SAME_SCHEMA != SAME_OBSERVABILITY
+SAME_COVERAGE_PERCENT != SAME_COVERAGE_TOPOLOGY
+CROSS_CASE_SCORE_DIFFERENCE != TRUE_STATE_DIFFERENCE
+```
+
+## Россия–Украина — topology summary
+
+Сильнее наблюдаются:
+
+- formal institutions;
+- military/security public signals;
+- macro/energy/resource evidence;
+- polling/institutional expectations;
+- health/education formal systems;
+- public information-manipulation narratives;
+- international assistance/sanctions.
+
+Слабее наблюдаются:
+
+- household normality;
+- food/fuel affordability at household level;
+- closed messengers/private groups;
+- small informal groups;
+- local intergroup relations;
+- real prevalence and behavioral effect of narratives.
+
+## Мьянма — topology summary
+
+Сильнее наблюдаются:
+
+- humanitarian consequences;
+- local food/fuel prices;
+- displacement sensors;
+- professional-group mobilization;
+- macro/banking/logistics disruptions;
+- internet-access degradation;
+- visible conflict events.
+
+Слабее наблюдаются:
+
+- remote/inaccessible regions;
+- informal economy;
+- content-level information operations/rumours;
+- exact scale/command of small armed groups;
+- household normality;
+- direct water-security coverage;
+- processes hidden after internet/media repression.
+
+## Cross-case comparability
+
+Одинаковая frozen schema применяется к обоим кейсам, но topology сильно различается.
+
+Поэтому будущий numeric EvidenceState обязан хранить `coverage topology annotation`, а не один агрегированный coverage percent.
+
+## Negative controls — состояние
+
+`NEGATIVE_CONTROL_BACKFILL_009` остаётся частично незавершённым.
+
+Уже переиндексированы существующие:
+
+- stabilizers;
+- de-escalation / functional-recovery signals;
+- normality / uncertainty signals;
+- alternative explanations;
+- fragmentation signals, не позволяющие автоматически объявить coalition/unified command.
+
+Но ещё требуются дополнительные targeted false-positive analogues и systematic counter-signal search.
+
+```text
+BALANCED_RECORD_COUNT != BALANCED_REALITY
+COUNTERSIGNAL != PROOF_OF_SAFETY
+PRESSURE != PROOF_OF_OUTCOME
+```
+
+## Gate после topology matrix
+
+```text
+LEAKAGE_AUDIT: PASS_WITH_RESIDUAL_SELECTION_RISK
+NEGATIVE_CONTROL_EXISTING_INDEX: PASS
+SYSTEMATIC_NEGATIVE_CONTROL_BACKFILL: PARTIAL
+COVERAGE_TOPOLOGY_MATRIX: PASS
+BLIND_SPOTS_EXPLICIT: PASS
+CROSS_CASE_OBSERVABILITY_ASYMMETRY: PASS
+READY_FOR_SECOND_CODING_CHECK: YES
+READY_FOR_NUMERIC_EVIDENCESTATE: NO
 ```
 
 ## Следующий разрешённый этап
 
-Широкий Batch 009 НЕ открывается.
-
-Следующий порядок:
-
 ```text
-LEAKAGE_AUDIT_001
-→ NEGATIVE_CONTROL_BACKFILL_009
-→ COVERAGE_TOPOLOGY_MATRIX_001
-→ SECOND_CODING_CHECK
+SECOND_CODING_CHECK
+→ NEGATIVE_CONTROL_TARGETED_SOURCE_BACKFILL (если disagreement/gap требует)
 → NUMERIC_EVIDENCESTATE_GATE_REVIEW
 ```
 
-Числовой EvidenceState остаётся заблокирован до прохождения этих gates.
+`SECOND_CODING_CHECK` должен повторно закодировать подмножество evidence/snapshots без просмотра первой кодировки и измерить устойчивость интерпретации.
+
+Числовой EvidenceState остаётся заблокирован.
 
 ## Статус
 
@@ -105,6 +144,10 @@ BATCH_001_TO_007_COMPLETE
 FORMAL_GAP_AUDIT_COMPLETE
 TARGETED_BACKFILL_008_PARTIAL_PASS
 PRE_EVIDENCESTATE_DRY_RUN_001_COMPLETE
+LEAKAGE_AUDIT_001_COMPLETE
+NEGATIVE_CONTROL_BACKFILL_009_PARTIAL
+COVERAGE_TOPOLOGY_MATRIX_001_COMPLETE
+SECOND_CODING_CHECK_READY
 NUMERIC_EVIDENCESTATE_BLOCKED
 SCHEMA_FREEZE_PRESERVED
 FORECAST_VALIDATION_NOT_CLAIMED
